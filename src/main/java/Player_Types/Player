@@ -1,7 +1,8 @@
+package Player_Types;
+
 import java.util.ArrayList;
 
-public class Player implements Death{
-    //TODO implement interface for combat, death, and any other things that each player would do.
+public class Player implements Character{
 
     /* This class initializes all the general player stats and creates the player object,
     * constructor, getters, setters, and other respective methods.*/
@@ -32,6 +33,7 @@ public class Player implements Death{
         this.money = this.money + numberToDecrease;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -40,6 +42,7 @@ public class Player implements Death{
         this.name = name;
     }
 
+    @Override
     public int getHP() {
         return HP;
     }
@@ -79,7 +82,26 @@ public class Player implements Death{
     public void setXP(int XP) {
         this.XP = XP;
     }
-    public void dies(){
-        //TODO fill in everything that happens when the player dies.
+
+    @Override
+    public void changeHP(int change) {this.HP = this.getHP() - change; }
+
+    @Override
+    public boolean isDead(){
+        return this.HP <= 0;
+    }
+
+    @Override
+    public void receiveDamage(String attack) {
+        changeHP(3); //value = dmg of attack
+    }
+    @Override
+    public String getClassName() {
+        return ""; //add class attribute to the player classes
+    }
+
+    @Override
+    public boolean attack(String move, Character characterBeingAttacked) {
+        return false; // need to implement moves first
     }
 }

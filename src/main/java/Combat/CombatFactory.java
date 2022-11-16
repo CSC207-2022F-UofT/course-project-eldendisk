@@ -1,9 +1,10 @@
 package Combat;
 
 import java.util.Objects;
+import Player_Types.Player;
 
 public class CombatFactory {
-    public static Combat createCombat(String player, String combatType) {
+    public static Combat createCombat(Player player, String combatType) {
         if (Objects.equals(combatType, "Boss")) {
             return new BossCombat(player);
         } else if (Objects.equals(combatType, "Normal")) {

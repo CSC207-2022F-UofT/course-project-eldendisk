@@ -1,15 +1,20 @@
 package EnemyFactory;
 
+import Player_Types.Player;
+
 import java.util.Objects;
 
 public class EnemyFactory {
-    public static Enemy createEnemy(String player, String enemyType) {
-        if (Objects.equals(enemyType, "Boss")) {
-            return new BossEnemy(player, enemyType);
-        } else if (Objects.equals(enemyType, "Normal")) {
-            return new NormalEnemy(player, enemyType);
-        } //might need else statement to open up some space for the exceptions
-        return null;
+    public static Enemy createEnemy(Player player, String enemyType) {
+        switch (enemyType) {
+            case "Boss":
+                return new BossEnemy(player);
+            case "Normal":
+                return new NormalEnemy(player);
+            default:
+                System.out.println("Wrong enemyType. Please Check");
+                return null;
+        }
     }
 }
 

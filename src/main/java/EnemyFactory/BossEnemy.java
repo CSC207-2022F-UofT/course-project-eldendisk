@@ -1,79 +1,53 @@
 package EnemyFactory;
 
-public class BossEnemy implements Enemy {
+import Combat.Moves;
+import Player_Types.Character;
+import Player_Types.Player;
+
+public class BossEnemy extends Enemy {
     private String enemyName;
-    private int enemyHP;
-    private int enemyStats;
-    private int enemyAttackDmg;
+    private String className; // either Boss or Normal
+    //enemy stats
+    private int HP;
+    private int attackDamage;
+    private double damageMultiplier;
+    //moves
+    private Moves enemyMoves;
 
-    private String enemyType;
-
-    public BossEnemy(String player, String enemyType) { // String player -> Player player;
-        // implementation on creating fixed stats
-        this.enemyName = "";
-        this.enemyHP = 100; //player.getPlayerMaxHP * 0.7;
-        this.enemyStats = 9; //player.getPlayerStats * 0.7;
-        this.enemyAttackDmg = 10; // player.getPlayer
-    }
-    //getter methods
-    @Override
-    public int getEnemyStats() {
-        return enemyStats;
+    public BossEnemy(Player player) {
+        super(player, "Boss");
     }
 
+    // method - read off from the external file based on player.getgamelvl()
+    // implement following based on the method above
     @Override
-    public int getEnemyAttackDmg() {
-        return enemyAttackDmg;
+    public String setEnemyName() {
+        return "enemyName";
     }
 
     @Override
-    public int getEnemyDmgMultiplier() {
-        return 0;
+    public int setInitialEnemyHP() {
+        return 100;
     }
 
     @Override
-    public String getEnemyName() {
-        return enemyName;
+    public int setEnemyAttackDmg() {
+        return 100;
+    }
+    @Override
+    public double setEnemydamageMultiplier() {
+        return 1;
     }
 
     @Override
-    public int getEnemyHP() {
-        return enemyHP;
+    Moves setEnemyMoves() {
+        return null;
     }
+    // need to implement the moves first
 
     @Override
-    public String getEnemyType() {
-        return enemyType;
-    }
-
-    @Override
-    public void setEnemyStats(int enemyStats) {
-        this.enemyStats = enemyStats;
-    }
-
-    //setter methods
-    @Override
-    public void setEnemyAttackDmg(int enemyAttackDmg) {
-        this.enemyAttackDmg = enemyAttackDmg;
-    }
-
-    @Override
-    public void setEnemyName(String enemyName) {
-        this.enemyName = enemyName;
-    }
-
-    @Override
-    public void setEnemyDmgMultiplier(int enemyDmgMultiplier) {
-
-    }
-
-    @Override
-    public void setEnemyHP(int enemyHP) {
-        this.enemyHP = enemyHP;
-    }
-
-    @Override
-    public void setEnemyType(String enemyType) {
-        this.enemyType = enemyType;
+    public boolean attack(String move, Character characterBeingAttacked) {
+        // need to implement this method
+        return true;
     }
 }
