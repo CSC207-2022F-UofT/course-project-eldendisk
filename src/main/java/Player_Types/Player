@@ -11,7 +11,7 @@ public class Player implements Death{
     public int damageMultiplier = 0;
     public int money = 0;
     public int XP = 0;
-    public ArrayList<Object> inventory = new ArrayList<Object>();
+    public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
     public Player(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP,
                   ArrayList<Object> inventory) {
