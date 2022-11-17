@@ -26,6 +26,8 @@ public class Combat {
         return enemy;
     }
     public void startCombat() {
+        // this is the actual Combat portion. When Player chose to fight, let player pick a combat type (either normal or boss).
+        // Create Combat instance and call startCombat on that instance.
         Scanner scanner = new Scanner(System.in);
         System.out.println(this.getPlayer().getName() + " the " + this.getPlayer().getClassName() + " VS "
                 + this.getEnemy().getName() + " the " + this.getEnemy().getClassName());
@@ -50,7 +52,7 @@ public class Combat {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            selection = random.nextInt(10); // bound by number of moves in Moves
+            selection = random.nextInt(4); // bound by number of moves in Moves
 
             switch (selection) { // this is about the attack moves (implement moves and attack first then come back to this)
                 case 1:
@@ -68,9 +70,6 @@ public class Combat {
                 case 4:
                     System.out.println("headbutt");
                     this.getEnemy().attack("headbutt", this.getPlayer());
-                case 5:
-                    System.out.println("roar!");
-                    this.getEnemy().attack("roar!", this.getPlayer());
             }
         }
         if (this.getEnemy().isDead()) {

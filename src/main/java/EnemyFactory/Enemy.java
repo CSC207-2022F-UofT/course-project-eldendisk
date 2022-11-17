@@ -65,11 +65,7 @@ public abstract class Enemy implements Character {
     }
 
      public abstract boolean attack(String move, Character characterBeingAttacked);
-//    		if (this.isScared()) {
-//        System.out.println("\n" + this.getName() + " is still scared! can't move!");
-//        this.scared = false;
-//        return true;
-//    }
+
 //		switch (move) {
 //        case "kick":
 //            return kick(characterBeingAttacked);

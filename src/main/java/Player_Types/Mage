@@ -11,4 +11,16 @@ public class Mage extends Player{
             , ArrayList<Object> inventory) {
         super(name, HP, attackDamage, damageMultiplier, money, XP, inventory);
     }
+    public Mage(String name) {
+        super(name, 100, 10, 1, 0, 0);
+    }
+    @Override
+    public boolean attack(String move, Character characterBeingAttacked) {
+        return super.attack(move, characterBeingAttacked);
+    }
+
+    @Override
+    public void statGrowth() {
+
+    }
 }

@@ -2,13 +2,29 @@ package Player_Types;
 
 import java.util.ArrayList;
 
-public class Gunslinger extends Player{
+public class Gunslinger extends Player {
     /* This class creates the Gunslinger class. The values of the class will be changed depending on the
      * enemy the player encounters*/
     //TODO implement combat methods
 
     public Gunslinger(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , ArrayList<Object> inventory) {
+        // this constructor is called by LoadGame class
         super(name, HP, attackDamage, damageMultiplier, money, XP, inventory);
+    }
+    public Gunslinger(String name) {
+        // this constructor is called by PlayerCreation class
+        super(name, 100, 10, 1, 0, 0);
+    }
+
+
+    @Override
+    public boolean attack(String move, Character characterBeingAttacked) {
+        return super.attack(move, characterBeingAttacked);
+    }
+
+    @Override
+    public void statGrowth() {
+
     }
 }
