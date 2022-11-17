@@ -6,7 +6,7 @@ public class Game {
     private Player player;
     private Map map;
 
-    Game(Player player, Map map, String id){
+    public Game(Player player, Map map, String id){
         this.game_id = id;
         this.map = map;
         this.player = player;
@@ -19,3 +19,4 @@ public class Game {
         return this.game_id;
     }
 }
+
