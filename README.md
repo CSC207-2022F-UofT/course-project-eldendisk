@@ -5,3 +5,8 @@ Elden Disk is a text based single player game where the player has to beat a ser
 ## TODO
 - Add how to run
 - Add more as needed
+- Items Class
+- Test Cases
+- Main File
+- Save and Load
+- Player Level System
