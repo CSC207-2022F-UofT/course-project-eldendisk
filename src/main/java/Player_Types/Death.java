@@ -1,4 +1,4 @@
-Package Player_Types;
+package Player_Types;;
 
 public interface Death {
     public void dies();
