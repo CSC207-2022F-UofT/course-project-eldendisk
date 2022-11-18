@@ -1,3 +1,4 @@
+package Player_Types;
 import java.util.ArrayList;
 
 public class Mage extends Player{

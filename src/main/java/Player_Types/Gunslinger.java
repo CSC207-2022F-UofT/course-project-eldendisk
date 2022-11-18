@@ -1,3 +1,4 @@
+package Player_Types;
 import java.util.ArrayList;
 
 public class Gunslinger extends Player{

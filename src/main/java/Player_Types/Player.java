@@ -1,3 +1,4 @@
+package Player_Types;
 import java.util.ArrayList;
 
 public class Player implements Death{
@@ -11,10 +12,15 @@ public class Player implements Death{
     public int damageMultiplier = 0;
     public int money = 0;
     public int XP = 0;
+    //Should we increment the max_XP as the player levels up?
+    public int max_XP = 10;
+    public int player_level = 1;
+
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
+
     public Player(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP,
-                  ArrayList<Object> inventory) {
+                  ArrayList<Object> inventory, int max_XP, int player_level) {
         this.name = name;
         this.HP = HP;
         this.attackDamage = attackDamage;
@@ -22,6 +28,8 @@ public class Player implements Death{
         this.money = money;
         this.XP = XP;
         this.inventory = inventory;
+        this.max_XP = max_XP;
+        this.player_level=player_level;
     }
 
     public void increaseMoney(int numberToIncrease){
@@ -79,7 +87,22 @@ public class Player implements Death{
     public void setXP(int XP) {
         this.XP = XP;
     }
+
+
+    public int getMax_XP(){return this.max_XP;}
+    public int getPlayer_level(){return this.player_level;}
+
     public void dies(){
         //TODO fill in everything that happens when the player dies.
     }
+
+    // Should we make an XP calculation method to give player different XP everytime?
+    public void add_XP(){this.XP += 5;}
+
+    // This is used in the battle file. Condition: method is called when XP exceeds max_XP.
+    public void level_up(){
+        this.level_up();
+        this.XP = 0;
+    }
+
 }
