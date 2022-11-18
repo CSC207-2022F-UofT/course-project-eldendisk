@@ -1,4 +1,4 @@
 package Enemy;
 
-public interface NomralEnemyFactory {
+public interface NormalEnemyFactory {
 }
