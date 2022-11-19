@@ -1,7 +1,6 @@
 package Entities;
 import UseCases.SaveGame;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import WritingCSV.EditCSV;
 
