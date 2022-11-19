@@ -35,6 +35,6 @@ public class PlayerTest {
         p2.setXP(newXP);
 
         // assertion
-        assertEquals("the player's XP variable should have been set to 500", newXP, p2.setXP(newXP));
+        assertEquals("the player's XP variable should have been set to 500!", newXP, p2.setXP(newXP));
     }
 }
