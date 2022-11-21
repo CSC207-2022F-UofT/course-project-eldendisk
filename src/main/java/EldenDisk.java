@@ -40,6 +40,41 @@ public class EldenDisk {
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger" );
         String characterInput = scanner.nextLine();
     }
+     public static void EndGameDialogue(){
+        System.out.println("-------------------------------------------------------");
+        System.out.println("""
+                The fallen leaves tell a story\s
+                Of how a Tarnished became Elden Prince\s
+                In our home, across the fog, the Lands Between.\s
+                Our seed will look back upon us and recall\s
+                The Age of the Elden Prince""");
+        System.out.println("-------------------------------------------------------");
+        LargeText("THE END");
+
+    }
+    public static void LargeText(String txt) {
+        int width = 140;
+        int height = 80;
+
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        Graphics g = image.getGraphics();
+        g.setFont(new Font("SansSerif", Font.BOLD, 24));
+
+        Graphics2D graphics = (Graphics2D) g;
+        graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        graphics.drawString(txt, 10, 30);
+
+        for (int y = 0; y < height; y++) {
+            StringBuilder sb = new StringBuilder();
+            for (int x = 0; x < width; x++) {
+                sb.append(image.getRGB(x, y) == -16777216 ? " " : "$");
+            }
+            if (sb.toString().trim().isEmpty()) {
+                continue;
+            }
+            System.out.println(sb);
+        }
+    }
 
     public Player getPlayer() {
         return player;
