@@ -99,7 +99,7 @@ public class Player implements Death{
     // Should we make an XP calculation method to give player different XP everytime?
     public void add_XP(){this.XP += 5;}
 
-    // This is used in the battle file. Condition: method is called when XP exceeds max_XP.
+    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.
     public void level_up(){
         this.level_up();
         this.XP = 0;
