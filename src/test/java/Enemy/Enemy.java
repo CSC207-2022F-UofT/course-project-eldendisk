@@ -5,7 +5,7 @@ public class Enemy {
     int enemyHP;
     int enemyStats;
     int enemyAttackDmg;
-    int enemyDmgMultiplier;
+    double enemyDmgMultiplier;  //Shouldn't damage multiplier by a double? It was int and I changed it to double
     String enemyType;
 
     public int getEnemyAttackDmg() {
@@ -14,7 +14,7 @@ public class Enemy {
     public int getEnemyHP() {
         return enemyHP;
     }
-    public int getEnemyDmgMultiplier() {
+    public double getEnemyDmgMultiplier() {
         return enemyDmgMultiplier;
     }
     public int getEnemyStats() {
@@ -31,8 +31,9 @@ public class Enemy {
     public void setEnemyName(String enemyName) {
         this.enemyName = enemyName;
     }
-    public void setEnemyHP(int enemyHP) {
+    public Object setEnemyHP(int enemyHP) {
         this.enemyHP = enemyHP;
+        return null;
     }
     public void setEnemyStats(int enemyStats) {
         this.enemyStats = enemyStats;
@@ -40,11 +41,12 @@ public class Enemy {
     public void setEnemyAttackDmg(int enemyAttackDmg) {
         this.enemyAttackDmg = enemyAttackDmg;
     }
-    public void setEnemyDmgMultiplier(int enemyDmgMultiplier) {
+    public void setEnemyDmgMultiplier(double enemyDmgMultiplier) {
         this.enemyDmgMultiplier = enemyDmgMultiplier;
     }
-    public void setEnemyType(String enemyType) {
+    public Object setEnemyType(String enemyType) {
         this.enemyType = enemyType;
+        return null;
     }
 
 
