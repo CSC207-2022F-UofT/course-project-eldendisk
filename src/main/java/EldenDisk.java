@@ -23,13 +23,13 @@ public class EldenDisk {
         System.out.println("-------------------------------------------------------");
         System.out.println("Welcome to Elden Disk!");
         System.out.println("-------------------------------------------------------");
-        System.out.println("""
-                Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\s
-                You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\s
-                On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.
-                Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.
-                Only when you beat all the bosses, will you be declared the Elden Prince.
-                """);
+        System.out.println("Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\\s\n" +
+                        "                You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\\s\n" +
+                        "                On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.\n" +
+                        "                Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.\n" +
+                        "                Only when you beat all the bosses, will you be declared the Elden Prince."
+
+                );
         System.out.println("-------------------------------------------------------");
         System.out.println("Type quit to exit at anytime.");
         System.out.println("-------------------------------------------------------");
