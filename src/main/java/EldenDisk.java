@@ -2,6 +2,8 @@ import EnemyFactory.Enemy;
 import Player_Types.Player;
 import Player_Types.Samurai;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -23,24 +25,40 @@ public class EldenDisk {
         System.out.println("-------------------------------------------------------");
         System.out.println("Welcome to Elden Disk!");
         System.out.println("-------------------------------------------------------");
-        System.out.println("Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\\s\n" +
-                        "                You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\\s\n" +
-                        "                On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.\n" +
-                        "                Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.\n" +
-                        "                Only when you beat all the bosses, will you be declared the Elden Prince."
+        System.out.println("""
+                        Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\\s
+                                        You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\\s
+                                        On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.
+                                        Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.
+                                        Only when you beat all the bosses, will you be declared the Elden Prince."""
 
                 );
         System.out.println("-------------------------------------------------------");
         System.out.println("Type quit to exit at anytime.");
         System.out.println("-------------------------------------------------------");
         System.out.println("What is your name, tarnished?");
+        
         String characterName = scanner.nextLine();
+        if (characterName.equals("quit")){
+            System.exit(0);
+        }
+        
         System.out.println("-------------------------------------------------------");
         System.out.println("Chose your character, tarnished?");
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger" );
         String characterInput = scanner.nextLine();
+        
+        if (characterInput.equals("quit")){
+            System.exit(0);
+        } else {
+            while (!(characterInput.equals("1") || characterInput.equals("2") || characterInput.equals("3"))) {
+                System.out.println("Enter Valid Input");
+                characterInput = scanner.nextLine();
+            }
+        }
     }
-     public static void EndGameDialogue(){
+
+    public static void EndGameDialogue(){
         System.out.println("-------------------------------------------------------");
         System.out.println("""
                 The fallen leaves tell a story\s
