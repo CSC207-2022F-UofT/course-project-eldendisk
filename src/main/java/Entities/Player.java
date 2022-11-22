@@ -1,4 +1,4 @@
-package Player_Types;
+package Entities;
 import java.util.ArrayList;
 
 public class Player implements Death{
@@ -84,8 +84,9 @@ public class Player implements Death{
         return XP;
     }
 
-    public void setXP(int XP) {
+    public Object setXP(int XP) {
         this.XP = XP;
+        return null;
     }
 
 

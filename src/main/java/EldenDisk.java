@@ -1,11 +1,8 @@
 import EnemyFactory.Enemy;
-import Player_Types.Player;
-import Player_Types.Samurai;
+import Entities.Player;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 /* In this class the key events and dialogue of the game are implemented */
