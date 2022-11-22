@@ -1,4 +1,4 @@
-package combat_test;
+package CombatTests;
 
 import Combat.Move;
 import org.junit.After;
