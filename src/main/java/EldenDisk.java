@@ -1,4 +1,4 @@
-import EnemyFactory.Enemy;
+import Entities.EnemyFactory.Enemy;
 import Entities.Player;
 
 import java.awt.*;

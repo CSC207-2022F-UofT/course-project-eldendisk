@@ -1,4 +1,4 @@
-package EnemyFactory;
+package Entities.EnemyFactory;
 
 import java.util.Objects;
 

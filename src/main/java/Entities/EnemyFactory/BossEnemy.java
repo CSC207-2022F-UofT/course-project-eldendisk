@@ -1,20 +1,20 @@
-package EnemyFactory;
+package Entities.EnemyFactory;
 
-public class NormalEnemy implements Enemy {
+public class BossEnemy implements Enemy {
     private String enemyName;
     private int enemyHP;
     private int enemyStats;
     private int enemyAttackDmg;
+
     private String enemyType;
 
-    public NormalEnemy(String player, String enemyType) { // String player -> Player player;
-        // creating enemy with 70%
-        this.enemyName = ""; // might not need this
+    public BossEnemy(String player, String enemyType) { // String player -> Player player;
+        // implementation on creating fixed stats
+        this.enemyName = "";
         this.enemyHP = 100; //player.getPlayerMaxHP * 0.7;
         this.enemyStats = 9; //player.getPlayerStats * 0.7;
-        this.enemyAttackDmg = 10; // maybe constant for this?
+        this.enemyAttackDmg = 10; // player.getPlayer
     }
-
     //getter methods
     @Override
     public int getEnemyStats() {
@@ -28,7 +28,7 @@ public class NormalEnemy implements Enemy {
 
     @Override
     public int getEnemyDmgMultiplier() {
-        return 0; //something here
+        return 0;
     }
 
     @Override
