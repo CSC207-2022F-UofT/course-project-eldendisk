@@ -1,4 +1,4 @@
-package Combat;
+package UI;
 
 public interface CombatInteractionUI {
     // pick move

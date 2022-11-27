@@ -1,7 +1,7 @@
 package Combat;
 
-import EnemyFactory.Enemy;
-import EnemyFactory.EnemyFactory;
+import Entities.EnemyFactory.Enemy;
+import Entities.EnemyFactory.EnemyFactory;
 
 public class BossCombat implements Combat{
     Enemy combatEnemy;

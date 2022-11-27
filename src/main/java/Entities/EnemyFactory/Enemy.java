@@ -1,4 +1,4 @@
-package EnemyFactory;
+package Entities.EnemyFactory;
 
 public interface Enemy { //this should be an interface
     public int getEnemyAttackDmg();
