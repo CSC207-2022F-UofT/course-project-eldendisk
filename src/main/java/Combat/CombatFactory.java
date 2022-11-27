@@ -1,5 +1,8 @@
 package Combat;
 
+import Entities.Player;
+//import Player_Types.Player;
+
 import java.util.Objects;
 
 public class CombatFactory {
