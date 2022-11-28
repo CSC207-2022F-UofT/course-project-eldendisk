@@ -6,11 +6,8 @@ import java.io.IOException;
 public class SaveGame implements SaveGameGateway {
 //Append the game to the csv file
 
-    private String Converter(Game game){
-        return GetInfo(game);}
-
-    public static boolean save(String info) throws IOException {
-        GameStorage.Add();
+    public static boolean save(Game game) throws IOException {
+        GameStorage.Add(Converter(game));
         return true;
     }
 

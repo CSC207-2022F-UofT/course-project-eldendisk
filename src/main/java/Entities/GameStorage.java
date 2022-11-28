@@ -55,7 +55,7 @@ public class GameStorage {
         }
         String last = sc.toString();
         sc.close();
-        return Integer.valueOf(last[0]);
+        return (int) last.charAt(0);
 
     }
 }
