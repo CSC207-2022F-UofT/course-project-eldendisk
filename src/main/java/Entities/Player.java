@@ -1,7 +1,10 @@
 package Entities;
+import Item.Equip;
+import Item.Item;
+
 import java.util.ArrayList;
 
-public class Player implements Death{
+public class Player implements Death, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
 
     /* This class initializes all the general player stats and creates the player object,
@@ -104,6 +107,21 @@ public class Player implements Death{
     public void level_up(){
         this.level_up();
         this.XP = 0;
+    }
+
+
+    public void equipItem(Item item){
+        this.HP += item.defend_pwr;
+        this.attackDamage += item.attack_pwr;
+        this.inventory.add(item);
+
+    }
+
+    public void removeItem(Item item){
+        this.HP -= item.defend_pwr;
+        this.attackDamage -= item.attack_pwr;
+        this.inventory.remove(item);
+
     }
 
 }

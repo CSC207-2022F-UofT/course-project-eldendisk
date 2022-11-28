@@ -1,12 +1,12 @@
 package Item;
 
 public class Item {
-    private String name;
-    private int buy_price;
-    private int sell_price;
-    private int attack_pwr;
-    private int defend_pwr;
-    private boolean consumable;
+    public String name;
+    public int buy_price;
+    public int sell_price;
+    public int attack_pwr;
+    public int defend_pwr;
+    public boolean consumable;
 
     public Item(String name, int buy, int sell, int attack, int defend, boolean consumable){
         this.name = name;
