@@ -19,20 +19,17 @@ public class Player implements Death, Equip{
     public int max_XP = 10;
     public int player_level = 1;
 
+    public boolean player_alive = true;
+
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
 
-    public Player(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP,
-                  ArrayList<Object> inventory, int max_XP, int player_level) {
+    public Player(String name) {
         this.name = name;
-        this.HP = HP;
-        this.attackDamage = attackDamage;
-        this.damageMultiplier = damageMultiplier;
-        this.money = money;
-        this.XP = XP;
-        this.inventory = inventory;
-        this.max_XP = max_XP;
-        this.player_level=player_level;
+        this.damageMultiplier = 1;
+        this.money = 10;
+        this.XP = 1;
+        this.inventory = new ArrayList<>();
     }
 
     public void increaseMoney(int numberToIncrease){
@@ -97,7 +94,7 @@ public class Player implements Death, Equip{
     public int getPlayer_level(){return this.player_level;}
 
     public void dies(){
-        //TODO fill in everything that happens when the player dies.
+        this.player_alive = false;
     }
 
     // Should we make an XP calculation method to give player different XP everytime?
