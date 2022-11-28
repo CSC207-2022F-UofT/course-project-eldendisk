@@ -1,10 +1,9 @@
 package Entities;
 import UseCases.SaveGame;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
+
 import WritingCSV.EditCSV;
 
 import javax.swing.*;
@@ -17,7 +16,7 @@ public class GameStorage {
 
     private static File GameList = new File("course-project-eldendisk/src/main/java");
 
-    public boolean Add(String game) throws IOException {
+    public static boolean Add(String game) throws IOException {
         try{
         WritingCSV.EditCSV.Write( game, GameList.getPath());}
 
@@ -46,7 +45,18 @@ public class GameStorage {
             }
             line = br.readLine();
         }
+        br.close();
         return new String[0];
+    }
+    public static int GetLatestId () throws IOException {
+        Scanner sc = new Scanner(GameList);
+        while (sc.hasNext()){
+            sc.next();
+        }
+        String last = sc.toString();
+        sc.close();
+        return Integer.valueOf(last[0]);
+
     }
 }
 

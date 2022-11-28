@@ -23,6 +23,14 @@ public class Game {
         return this.game_id;
     }
 
+    public Player GetPlayer(){
+        return this.player;
+    }
+
+    public int GetLevel () {
+        return this.level;
+    }
+
 
 }
 

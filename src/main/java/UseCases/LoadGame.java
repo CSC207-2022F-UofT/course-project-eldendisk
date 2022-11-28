@@ -10,12 +10,12 @@ public class LoadGame implements StartGame{
     @Override
     public Game StartGame(Player player, int id) throws IOException {
         int i = 0;
-        if (GameStorage.FindGame(id)!= [i]){
+        if (Integer.parseInt(GameStorage.FindGame(id)[0])!= i){
             String lv = GameStorage.FindGame(id)[2];
+            return new Game(player, id, Integer.parseInt(lv));
         }
-        Game g = new Game(player, id, lv);
-        return g;
+        return new Game(player, id);
     }
-//    Reads the csv file, locates the right game with id,
+
 
 }

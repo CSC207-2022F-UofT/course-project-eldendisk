@@ -7,5 +7,5 @@ public interface SaveGameGateway {
     //From Game: Level, Name
     //Turn them into String..? To be added to the csv file
 
-    String GetInfo(Game game, Player player);
+    String GetInfo(Game game);
 }
