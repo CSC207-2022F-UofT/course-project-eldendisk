@@ -6,17 +6,21 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Main {
-    Player user = new Player("player1");
+
+
     public static void main(String[] args) {
+
+        BossEnemy boss1 = new BossEnemy("player", "boss_one");
+        Player user = new Player("player1");
+
         EldenDisk.LargeText("ELDEN RING");
-        EldenDisk.startFight();
+
+        EldenDisk game = new EldenDisk(user, boss1);
+        game.startFight();
 
         EldenDisk.EndGameDialogue();
         EldenDisk.LargeText("THE END");
-    }
-    BossEnemy boss1 = new BossEnemy("player", "boss_one");
-    EldenDisk fight_one = new EldenDisk(user, boss1);
-    fight_one.bossFight1();
 
+        game.bossFight1();
     }
 }

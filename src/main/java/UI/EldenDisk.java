@@ -11,7 +11,8 @@ import java.util.Scanner;
 public class EldenDisk {
     private Player player;
     private BossEnemy enemy;
-     int selection;
+    int selection;
+    public String player_name;
 
     public EldenDisk(Player player, BossEnemy enemy) {
         this.player = player;
@@ -21,7 +22,7 @@ public class EldenDisk {
 
 
 
-    public static void startFight(){
+    public void startFight(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------------------------------------------");
         System.out.println("Welcome to Elden Disk!");
@@ -37,12 +38,15 @@ public class EldenDisk {
         System.out.println("What is your name, tarnished?");
         
         String characterName = scanner.nextLine();
+        this.player_name = characterName;
         if (characterName.equals("quit")){
             System.exit(0);
         }
         
         System.out.println("-------------------------------------------------------");
         System.out.println("Chose your character, tarnished?");
+
+        // need to assign player to this character type after the type is chosen
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger" );
         String characterInput = scanner.nextLine();
         
@@ -60,7 +64,7 @@ public class EldenDisk {
         Scanner scanner = new Scanner(System.in);
 
         while(this.getPlayer().player_alive & this.getEnemy().enemy_alive){
-            System.out.println(this.getPlayer() + ", it is your turn");
+            System.out.println(this.player_name + ", it is your turn");
             if (scanner.hasNextLine()){
                 String playerMove = scanner.nextLine();
                 if (playerMove.equals("quit")){
