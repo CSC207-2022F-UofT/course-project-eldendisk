@@ -1,6 +1,6 @@
 package UI;
 
-import Entities.EnemyFactory.Enemy;
+import Entities.EnemyFactory.BossEnemy;
 import Entities.Player;
 
 import java.awt.*;
@@ -10,16 +10,19 @@ import java.util.Scanner;
 /* In this class the key events and dialogue of the game are implemented */
 public class EldenDisk {
     private Player player;
-    private Enemy enemy;
-    private int selection;
+    private BossEnemy enemy;
+    int selection;
+    public String player_name;
 
-    public EldenDisk(Player player, Enemy enemy, int selection) {
+    public EldenDisk(Player player, BossEnemy enemy) {
         this.player = player;
         this.enemy = enemy;
-        this.selection = selection;
+
     }
 
-    public static void startFight(){
+
+
+    public void startFight(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("-------------------------------------------------------");
         System.out.println("Welcome to Elden Disk!");
@@ -35,12 +38,15 @@ public class EldenDisk {
         System.out.println("What is your name, tarnished?");
         
         String characterName = scanner.nextLine();
+        this.player_name = characterName;
         if (characterName.equals("quit")){
             System.exit(0);
         }
         
         System.out.println("-------------------------------------------------------");
         System.out.println("Chose your character, tarnished?");
+
+        // need to assign player to this character type after the type is chosen
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger" );
         String characterInput = scanner.nextLine();
         
@@ -52,6 +58,38 @@ public class EldenDisk {
                 characterInput = scanner.nextLine();
             }
         }
+    }
+
+    public void bossFight1(){
+        Scanner scanner = new Scanner(System.in);
+
+        while(this.getPlayer().player_alive & this.getEnemy().enemy_alive){
+            System.out.println(this.player_name + ", it is your turn");
+            if (scanner.hasNextLine()){
+                String playerMove = scanner.nextLine();
+                if (playerMove.equals("quit")){
+                    System.exit(0);
+                }
+
+            }
+            switch (selection){
+                case 1:
+                    //move 1
+                case 2:
+                    //move 2
+                case 3:
+                    //move 3
+                case 4:
+                    //move 4
+            }
+        }
+        if (! this.getPlayer().player_alive){
+            System.out.println("You have died!");
+        }
+        if (! this.getEnemy().enemy_alive){
+            System.out.println(this.getEnemy().getEnemyName() + " have died. You won!");
+        }
+
     }
 
     public static void EndGameDialogue(){
@@ -97,11 +135,11 @@ public class EldenDisk {
         this.player = player;
     }
 
-    public Enemy getEnemy() {
+    public BossEnemy getEnemy() {
         return enemy;
     }
 
-    public void setEnemy(Enemy enemy) {
+    public void setEnemy(BossEnemy enemy) {
         this.enemy = enemy;
     }
 

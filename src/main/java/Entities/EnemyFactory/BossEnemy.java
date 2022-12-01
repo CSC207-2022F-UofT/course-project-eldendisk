@@ -1,12 +1,15 @@
 package Entities.EnemyFactory;
+import Entities.Death;
 
-public class BossEnemy implements Enemy {
+public class BossEnemy implements Enemy, Death {
     private String enemyName;
     private int enemyHP;
     private int enemyStats;
     private int enemyAttackDmg;
 
     private String enemyType;
+
+    public boolean enemy_alive = true;
 
     public BossEnemy(String player, String enemyType) { // String player -> Player player;
         // implementation on creating fixed stats
@@ -75,5 +78,9 @@ public class BossEnemy implements Enemy {
     @Override
     public void setEnemyType(String enemyType) {
         this.enemyType = enemyType;
+    }
+
+    public void dies(){
+        this.enemy_alive = false;
     }
 }

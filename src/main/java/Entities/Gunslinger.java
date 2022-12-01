@@ -8,6 +8,6 @@ public class Gunslinger extends Player{
 
     public Gunslinger(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , ArrayList<Object> inventory, int max_XP, int player_level) {
-        super(name, HP, attackDamage, damageMultiplier, money, XP, inventory, max_XP, player_level);
+        super(name);
     }
 }
