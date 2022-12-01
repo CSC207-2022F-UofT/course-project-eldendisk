@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNull;
 
 public class CombatFactoryTest {
+    //
     @Before
     public void setUp() {
     }
