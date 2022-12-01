@@ -1,10 +1,22 @@
-package combat_test;
+package CombatTests;
 
 import Combat.Move;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class MoveTest {
+    //
+    @Before
+    public void setUp() {
+    }
+
+    @After
+    public void tearDown() {
+    }
+
     @Test
     public void testToString() {
         Move move = new Move("attack", 10, 2, "enemy");
