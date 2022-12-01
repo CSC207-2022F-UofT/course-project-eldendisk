@@ -7,7 +7,7 @@ public class Mage extends Player{
     //TODO implement combat methods
 
     public Mage(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
-            , ArrayList<Object> inventory, int max_XP, int player_level) {
+            , int max_XP, int player_level) {
         super(name);
     }
 }
