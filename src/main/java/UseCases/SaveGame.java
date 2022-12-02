@@ -4,10 +4,16 @@ import Entities.GameStorage;
 import java.io.IOException;
 
 public class SaveGame implements SaveGameGateway {
-//Append the game to the csv file
+    /**
+     * The Use Case responsible for saving the Game to GameStorage.
+     *
+     * @param game that needs to be saved to the GameStorage
+     * @return boolean indicating whether save succeeded.
+     * @throws IOException
+     */
 
     public static boolean save(Game game) throws IOException {
-        GameStorage.Add(Converter(game));
+        GameStorage.Add(GetInfo(game));
         return true;
     }
 
@@ -21,4 +27,4 @@ public class SaveGame implements SaveGameGateway {
     }
 
     }
-}
+

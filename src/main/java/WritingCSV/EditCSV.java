@@ -19,8 +19,7 @@ public class EditCSV {
         String tempFile = "temp.txt";
         File old = new File(filepath);
         File newf = new File(tempFile);
-        String curr_line ;
-        String data[];
+        String curr_line;
 
         FileWriter fw = new FileWriter(filepath, true);
         PrintWriter pw = new PrintWriter(fw);
@@ -28,17 +27,54 @@ public class EditCSV {
         FileReader fr = new FileReader(filepath);
         BufferedReader br = new BufferedReader(fr);
 
-        while( (curr_line= br.readLine()) != null && position != remove_line){
-                pw.println(curr_line);
-            }
-        fw.close();
-            pw.close();
-            fr.close();
-            br.close();
-            old.delete();
-            File dump = new File(filepath);
-            newf.renameTo(dump);
+        while ((curr_line = br.readLine())!= null && position != remove_line){
+            pw.println(curr_line);
+            position += 1;
+            curr_line = br.readLine();
         }
+        curr_line = br.readLine();
+
+        while ((curr_line = br.readLine())!= null){
+            pw.println((curr_line));
+            curr_line = br.readLine();
+        }
+        fw.close();
+        pw.close();
+        fr.close();
+        br.close();
+        old.delete();
+        File dump = new File(filepath);
+        newf.renameTo(dump);
+
 
     }
-}
+
+//    public static void DeleteLineById(String filepath, int remove_line) throws IOException {
+//        int position = 0;
+//        String tempFile = "temp.txt";
+//        File old = new File(filepath);
+//        File newf = new File(tempFile);
+//        String curr_line ;
+//        String data[];
+//
+//        FileWriter fw = new FileWriter(filepath, true);
+//        PrintWriter pw = new PrintWriter(fw);
+//
+//        FileReader fr = new FileReader(filepath);
+//        BufferedReader br = new BufferedReader(fr);
+//
+//        while( (curr_line= br.readLine()) != null && position != remove_line){
+//                pw.println(curr_line);
+//                position += 1;
+//            }
+//        fw.close();
+//            pw.close();
+//            fr.close();
+//            br.close();
+//            old.delete();
+//            File dump = new File(filepath);
+//            newf.renameTo(dump);
+//        }
+
+    }
+

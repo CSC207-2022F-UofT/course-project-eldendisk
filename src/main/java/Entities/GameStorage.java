@@ -1,40 +1,52 @@
 package Entities;
-import UseCases.SaveGame;
-
-import java.io.*;
-import java.util.Scanner;
-
-import WritingCSV.EditCSV;
 
 import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 
 public class GameStorage {
-//    Entity that stores the saved games, contains the csv file.
-//    The csv file should be able to be modified.
-//    Specifically should be able to 1. Append 2. Remove
+    /**
+     * Entity that stores the saved games in a csv file. Allow actions including, Add, Remove and FindGame.
+     */
 
-    private static File GameList = new File("course-project-eldendisk/src/main/java");
+    private static File GameList = new File("/Users/bellehuang/IdeaProjects/course-project-eldendisk/src/main/GameStorage");
 
-    public static boolean Add(String game) throws IOException {
+    /**
+     * @param game to be added to the GameStorage
+     * @throws IOException
+     */
+    public static void Add(String game) throws IOException {
         try{
-        WritingCSV.EditCSV.Write( game, GameList.getPath());}
+        WritingCSV.EditCSV.Write(game, GameList.getPath());}
 
         catch (IOException e)
         {
             JOptionPane.showMessageDialog(null, "Failed to add game.");
         }
-        return true;
     }
-    public static boolean Remove(int ID) throws IOException {
+
+    /**
+     * @param id of the Game
+     * @throws IOException
+     */
+    public static void Remove(int id) throws IOException {
         try{
-            WritingCSV.EditCSV.DeleteLineById(GameList.getPath(), ID);
+            WritingCSV.EditCSV.DeleteLineById(GameList.getPath(), id);
             }
         catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Failed to remove game.");
         }
-        return true;
     }
+
+    /**
+     * @param id of the Game
+     * @return Needed info to start the game
+     * @throws IOException
+     */
     public static String[] FindGame(int id) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(GameList));
         String line = br.readLine();
@@ -48,6 +60,11 @@ public class GameStorage {
         br.close();
         return new String[0];
     }
+
+    /**
+     * @return id of the last saved game
+     * @throws IOException
+     */
     public static int GetLatestId () throws IOException {
         Scanner sc = new Scanner(GameList);
         while (sc.hasNext()){
