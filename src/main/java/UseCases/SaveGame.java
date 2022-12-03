@@ -3,7 +3,7 @@ import Entities.Game;
 import Entities.GameStorage;
 import java.io.IOException;
 
-public class SaveGame implements SaveGameGateway {
+public class SaveGame {
     /**
      * The Use Case responsible for saving the Game to GameStorage.
      *
