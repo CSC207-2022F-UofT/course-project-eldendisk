@@ -11,16 +11,15 @@ public class Main {
     public static void main(String[] args) {
 
         BossEnemy boss1 = new BossEnemy("player", "boss_one");
-        Player user = new Player("player1");
 
-        EldenDisk.LargeText("ELDEN RING");
+        EldenDisk.LargeText("ELDEN DISK");
 
-        EldenDisk game = new EldenDisk(user, boss1);
-        game.startFight();
+        EldenDisk game = new EldenDisk(boss1);
+        Player user = game.startFight();
 
-        EldenDisk.EndGameDialogue();
-        EldenDisk.LargeText("THE END");
+//        EldenDisk.EndGameDialogue();
+//        EldenDisk.LargeText("THE END");
 
-        game.bossFight1();
+        game.bossFight1(user);
     }
 }
