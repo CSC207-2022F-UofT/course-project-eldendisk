@@ -17,8 +17,7 @@ public class SaveGame implements SaveGameGateway {
         return true;
     }
 
-    @Override
-    public String GetInfo(Game game) {
+    public static String GetInfo(Game game) {
         StringBuilder sb = new StringBuilder();
         sb.append(game.GetId() + ",");
 //        sb.append()
