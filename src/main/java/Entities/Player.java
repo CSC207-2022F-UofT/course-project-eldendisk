@@ -4,7 +4,7 @@ import Item.Item;
 
 import java.util.ArrayList;
 
-public class Player implements Death, Equip{
+public class Player implements Character, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
 
     /* This class initializes all the general player stats and creates the player object,
@@ -32,6 +32,25 @@ public class Player implements Death, Equip{
         this.inventory = new ArrayList<>();
     }
 
+
+    String getClassName();
+
+    boolean attack(String move, Character characterBeingAttacked);
+
+    void receiveDamage(int damage);
+
+    void setCharacterHP(int HP);
+
+    public int getHP();
+
+    public void changeHP(int change);
+
+    boolean isDead();
+
+    public boolean checkMove(String move);
+
+}
+
     public void increaseMoney(int numberToIncrease){
         this.money = this.money + numberToIncrease;
     }
@@ -40,6 +59,7 @@ public class Player implements Death, Equip{
         this.money = this.money + numberToDecrease;
     }
 
+    @Override
     public String getName() {
         return name;
     }
