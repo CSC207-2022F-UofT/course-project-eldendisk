@@ -3,7 +3,7 @@ import entities.Game;
 import entities.GameStorage;
 import java.io.IOException;
 
-public class SaveGame implements SaveGameGateway {
+public class SaveGame {
     /**
      * The Use Case responsible for saving the Game to GameStorage.
      *
@@ -16,9 +16,7 @@ public class SaveGame implements SaveGameGateway {
         GameStorage.Add(GetInfo(game));
         return true;
     }
-
-    @Override
-    public String GetInfo(Game game) {
+    public static String GetInfo(Game game) {
         StringBuilder sb = new StringBuilder();
         sb.append(game.GetId() + ",");
 //        sb.append()
