@@ -1,6 +1,6 @@
 package UseCases;
 import Entities.Game;
-
+import Entities.Player;
 import java.io.IOException;
 
 public interface StartGame {
