@@ -59,7 +59,7 @@ public class EnemyTest {
         double DmgMultiplier = 0.5;
         e5.setEnemyDmgMultiplier(DmgMultiplier);
 
-        assertEquals("the Enemy's Damage Multiplier variable should have been set to 100!", DmgMultiplier, e5.setEnemyHP(DmgMultiplier));
+        assertEquals("the Enemy's Damage Multiplier variable should have been set to 100!", DmgMultiplier, e5.setEnemyHP((int) DmgMultiplier));
     }
 
     @Test (timeout = 500)
