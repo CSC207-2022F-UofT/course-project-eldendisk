@@ -51,6 +51,8 @@ public class EldenDisk {
         System.out.println("Chose your character, tarnished?");
 
         // need to assign player to this character type after the type is chosen
+        System.out.println("-------------------------------------------------------");
+        System.out.println("Chose your character, tarnished?");
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger");
         String characterInput = scanner.nextLine();
         if (characterInput.equals("quit")) {
@@ -68,11 +70,28 @@ public class EldenDisk {
 
         } else {
             return new Gunslinger(characterName,1,1,1,1,1,1,1);
+        System.out.println("""
+                You wake up dazed and confused, wondering where you are\s
+                'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
+                Especially not after those Monday night football benders you have with Xavier and the boys \s
+                You walk towards the exit and as you leave, the wonderful view of Limegrave encapsulates you\s
+                'Should not have ate those mushrooms they were definitely not Portabello'\s
+                As you exit a foe stands before you O_O\s
+                """);
+        if (characterInput.equals("1")) {
+            return new Samurai(characterName, 1, 1, 1, 1, 1, 1, 1); //TODO FILL OUT PARAMETERS WITH BETTER NUMBERS
+        } else if (characterInput.equals("2")) {
+            return new Mage(characterName, 1, 1, 1, 1, 1, 1, 1);
+
+        } else {
+            return new Gunslinger(characterName, 1, 1, 1, 1, 1, 1, 1);
 
         }
     }
 
     public void bossFight1(Player user) {
+        System.out.println("A Sapling Sentinel Appears before you and he starts swinging at you (You owe him money)");
+        System.out.println("IT IS TIMED TO FIGHT OH WEARY TARNISHED");
         Scanner scanner = new Scanner(System.in);
 
         while (user.HP > 0 & this.getEnemy().enemy_alive) {
@@ -144,11 +163,11 @@ public class EldenDisk {
 
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics g = image.getGraphics();
-        g.setFont(new Font("SansSerif", Font.BOLD, 24));
+        g.setFont(new Font("SansSerif", Font.BOLD, 20));
 
         Graphics2D graphics = (Graphics2D) g;
         graphics.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-        graphics.drawString(txt, 10, 30);
+        graphics.drawString(txt, 10, 20);
 
         for (int y = 0; y < height; y++) {
             StringBuilder sb = new StringBuilder();
