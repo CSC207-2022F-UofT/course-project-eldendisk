@@ -64,32 +64,25 @@ public class EldenDisk {
             }
         }
         if (characterInput.equals("1")) {
-            return new Samurai(characterName,1,1,1,1,1 ,1,1); //TODO FILL OUT PARAMETERS WITH BETTER NUMBERS
-        } else if (characterInput.equals("2")) {
-            return new Mage(characterName,1,1,1,1,1,1,1);
-
-        } else {
-            return new Gunslinger(characterName,1,1,1,1,1,1,1);
-        System.out.println("""
-                You wake up dazed and confused, wondering where you are\s
-                'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
-                Especially not after those Monday night football benders you have with Xavier and the boys \s
-                You walk towards the exit and as you leave, the wonderful view of Limegrave encapsulates you\s
-                'Should not have ate those mushrooms they were definitely not Portabello'\s
-                As you exit a foe stands before you O_O\s
-                """);
-        if (characterInput.equals("1")) {
             return new Samurai(characterName, 1, 1, 1, 1, 1, 1, 1); //TODO FILL OUT PARAMETERS WITH BETTER NUMBERS
         } else if (characterInput.equals("2")) {
             return new Mage(characterName, 1, 1, 1, 1, 1, 1, 1);
 
         } else {
             return new Gunslinger(characterName, 1, 1, 1, 1, 1, 1, 1);
-
         }
     }
 
+
     public void bossFight1(Player user) {
+        System.out.println("""
+                    You wake up dazed and confused, wondering where you are\s
+                    'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
+                    Especially not after those Monday night football benders you have with Xavier and the boys \s
+                    You walk towards the exit and as you leave, the wonderful view of Limegrave encapsulates you\s
+                    'Should not have ate those mushrooms they were definitely not Portabello'\s
+                    As you exit a foe stands before you O_O\s
+                    """);
         System.out.println("A Sapling Sentinel Appears before you and he starts swinging at you (You owe him money)");
         System.out.println("IT IS TIMED TO FIGHT OH WEARY TARNISHED");
         Scanner scanner = new Scanner(System.in);
@@ -197,3 +190,4 @@ public class EldenDisk {
         this.selection = selection;
     }
 }
+
