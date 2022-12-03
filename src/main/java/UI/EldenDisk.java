@@ -40,11 +40,17 @@ public class EldenDisk {
         System.out.println("Type quit to exit at anytime.");
         System.out.println("-------------------------------------------------------");
         System.out.println("What is your name, tarnished?");
+
         String characterName = scanner.nextLine();
         this.player_name = characterName;
         if (characterName.equals("quit")) {
             System.exit(0);
         }
+
+        System.out.println("-------------------------------------------------------");
+        System.out.println("Chose your character, tarnished?");
+
+        // need to assign player to this character type after the type is chosen
         System.out.println("-------------------------------------------------------");
         System.out.println("Chose your character, tarnished?");
         System.out.println("1. Samurai \n2. Mage \n3. Gunslinger");
@@ -57,6 +63,13 @@ public class EldenDisk {
                 characterInput = scanner.nextLine();
             }
         }
+        if (characterInput.equals("1")) {
+            return new Samurai(characterName,1,1,1,1,1 ,1,1); //TODO FILL OUT PARAMETERS WITH BETTER NUMBERS
+        } else if (characterInput.equals("2")) {
+            return new Mage(characterName,1,1,1,1,1,1,1);
+
+        } else {
+            return new Gunslinger(characterName,1,1,1,1,1,1,1);
         System.out.println("""
                 You wake up dazed and confused, wondering where you are\s
                 'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
