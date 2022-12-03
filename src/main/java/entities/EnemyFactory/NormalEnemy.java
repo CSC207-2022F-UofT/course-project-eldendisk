@@ -1,4 +1,4 @@
-package Entities.EnemyFactory;
+package entities.EnemyFactory;
 
 public class NormalEnemy implements Enemy {
     private String enemyName;

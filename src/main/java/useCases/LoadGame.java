@@ -1,7 +1,7 @@
-package UseCases;
+package useCases;
 
-import Entities.Game;
-import Entities.GameStorage;
+import entities.Game;
+import entities.GameStorage;
 
 import java.io.*;
 

@@ -1,6 +1,6 @@
-package UseCases;
-import Entities.Game;
-import Entities.GameStorage;
+package useCases;
+import entities.Game;
+import entities.GameStorage;
 import java.io.IOException;
 
 public class SaveGame implements SaveGameGateway {

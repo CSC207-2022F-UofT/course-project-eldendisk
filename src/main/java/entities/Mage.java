@@ -1,5 +1,4 @@
-package Entities;
-import java.util.ArrayList;
+package entities;
 
 public class Mage extends Player{
     /* This class creates the mage class. The values of the class will be changed depending on the

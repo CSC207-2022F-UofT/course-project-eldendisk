@@ -1,5 +1,5 @@
-package Entities.EnemyFactory;
-import Entities.Death;
+package entities.EnemyFactory;
+import entities.Death;
 
 public class BossEnemy implements Enemy, Death {
     private String enemyName;

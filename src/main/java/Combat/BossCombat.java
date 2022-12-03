@@ -1,7 +1,7 @@
 package Combat;
 
-import Entities.EnemyFactory.Enemy;
-import Entities.EnemyFactory.EnemyFactory;
+import entities.EnemyFactory.Enemy;
+import entities.EnemyFactory.EnemyFactory;
 
 //import EnemyFactory.Enemy;
 //import EnemyFactory.EnemyFactory;

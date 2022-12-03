@@ -1,5 +1,4 @@
-package Entities;
-import java.util.ArrayList;
+package entities;
 
 public class Gunslinger extends Player{
     /* This class creates the Gunslinger class. The values of the class will be changed depending on the
