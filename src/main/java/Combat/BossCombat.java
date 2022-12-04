@@ -2,18 +2,15 @@ package Combat;
 
 import Entities.EnemyFactory.Enemy;
 import Entities.EnemyFactory.EnemyFactory;
+import Entities.Player;
 
-//import EnemyFactory.Enemy;
-//import EnemyFactory.EnemyFactory;
-
-
-
-public class BossCombat implements Combat{
+public class BossCombat extends Combat{
     Enemy combatEnemy;
-    String player;
+    Player player;
     int gameLevel;
 
-    public BossCombat(String player) {
+    public BossCombat(Player player) {
+        super(player, "Boss");
         this.combatEnemy = EnemyFactory.createEnemy(player, "Boss");
 
     }

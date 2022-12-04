@@ -1,10 +1,11 @@
 package Entities;
+import Combat.Move;
 import Item.Equip;
 import Item.Item;
 
 import java.util.ArrayList;
 
-public class Player implements Character, Equip{
+public abstract class Player implements Character, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
 
     /* This class initializes all the general player stats and creates the player object,
@@ -23,6 +24,8 @@ public class Player implements Character, Equip{
 
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
+    public ArrayList<Move> moves;
+
 
     public Player(String name) {
         this.name = name;
@@ -30,26 +33,54 @@ public class Player implements Character, Equip{
         this.money = 10;
         this.XP = 1;
         this.inventory = new ArrayList<>();
+        this.moves = setMoves();
+    }
+    // following methods are the methods in Character interface.
+    @Override
+    public abstract boolean attack(String move, Character characterBeingAttacked);
+
+    @Override
+    public void receiveDamage(int damage) {
+        changeHP(damage);
+    }
+
+    @Override
+    public void setCharacterHP(int HP) {
+        this.HP = HP;
     }
 
 
-    String getClassName();
+    @Override
+    public void changeHP(int change) {
+        this.HP = this.HP - change;
+    }
 
-    boolean attack(String move, Character characterBeingAttacked);
+    @Override
+    public boolean isDead() {
+        return this.player_alive;
+    }
 
-    void receiveDamage(int damage);
+    @Override
+    public String pickMove(String selection) {
+        // pre condition : selection is either 1, 2, 3, 4
+        return getMoves().get(Integer.valueOf(selection) - 1).toString();
+    }
 
-    void setCharacterHP(int HP);
+    @Override
+    public abstract ArrayList<Move> setMoves();
+    // this sets character's moves according to its class (or type)
+    @Override
+    public ArrayList<Move> getMoves() {return this.moves;}
 
-    public int getHP();
 
-    public void changeHP(int change);
+    public void printMoves()  {
+        for (int i = 0 ; i < 4 ; i++) {
+            System.out.println((i+1) + " : " + getMoves().get(i).toString());
+        }
+    }
 
-    boolean isDead();
 
-    public boolean checkMove(String move);
 
-}
 
     public void increaseMoney(int numberToIncrease){
         this.money = this.money + numberToIncrease;
@@ -68,10 +99,11 @@ public class Player implements Character, Equip{
         this.name = name;
     }
 
+    @Override
     public int getHP() {
         return HP;
     }
-
+    @Override
     public void setHP(int HP) {
         this.HP = HP;
     }
@@ -99,6 +131,7 @@ public class Player implements Character, Equip{
     public void setMoney(int money) {
         this.money = money;
     }
+
 
     public int getXP() {
         return XP;

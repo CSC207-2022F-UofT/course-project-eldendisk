@@ -1,86 +1,90 @@
 package Entities.EnemyFactory;
-import Entities.Death;
+import Combat.Move;
+import Entities.Player;
+import Entities.Character;
 
-public class BossEnemy implements Enemy, Death {
-    private String enemyName;
-    private int enemyHP;
-    private int enemyStats;
-    private int enemyAttackDmg;
+import java.util.ArrayList;
 
-    private String enemyType;
-
-    public boolean enemy_alive = true;
-
-    public BossEnemy(String player, String enemyType) { // String player -> Player player;
-        // implementation on creating fixed stats
-        this.enemyName = "";
-        this.enemyHP = 100; //player.getPlayerMaxHP * 0.7;
-        this.enemyStats = 9; //player.getPlayerStats * 0.7;
-        this.enemyAttackDmg = 10; // player.getPlayer
-    }
-    //getter methods
-    @Override
-    public int getEnemyStats() {
-        return enemyStats;
+public class BossEnemy extends Enemy {
+    public BossEnemy(Player player) {
+        super(player, "Boss");
     }
 
     @Override
-    public int getEnemyAttackDmg() {
-        return enemyAttackDmg;
+    public String setName(String name) {
+        return name;
     }
 
     @Override
-    public int getEnemyDmgMultiplier() {
-        return 0;
+    public int setInitialEnemyHP() {
+        return 5;
     }
 
     @Override
-    public String getEnemyName() {
-        return enemyName;
+    public int setAttackDmg() {
+        return 1;
+    }
+    @Override
+    public double setDamageMultiplier() {
+        return 1.0;
     }
 
     @Override
-    public int getEnemyHP() {
-        return enemyHP;
+    public ArrayList<Move> setMoves() {
+        ArrayList<Move> moves = new ArrayList<Move>();
+        Move first = new Move("Roar", 1, 1, "Opponent");
+        Move second = new Move("Kick", 1, 1, "Opponent");
+        Move third = new Move("Punch", 1, 1, "Opponent");
+        Move fourth = new Move("Charge", 1, 1, "Opponent");
+
+        moves.add(first);
+        moves.add(second);
+        moves.add(third);
+        moves.add(fourth);
+
+        return moves;
     }
 
     @Override
-    public String getEnemyType() {
-        return enemyType;
+    public boolean attack(String move, Character characterBeingAttacked) {
+
+        switch (move) {
+            case "Roar":
+                return roar(characterBeingAttacked);
+            case "Kick":
+                return kick(characterBeingAttacked);
+            case "Punch":
+                return punch(characterBeingAttacked);
+            case "Charge":
+                return charge(characterBeingAttacked);
+            default:
+                System.out.println("\n" + move + " is not a valid move you skip your turn doofus! \n");
+                return true;
+        }
     }
 
     @Override
-    public void setEnemyStats(int enemyStats) {
-        this.enemyStats = enemyStats;
+    public void setHP(int HP) {
+        this.setHP(HP);
     }
 
-    //setter methods
-    @Override
-    public void setEnemyAttackDmg(int enemyAttackDmg) {
-        this.enemyAttackDmg = enemyAttackDmg;
+    private boolean roar(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(2);
+        return true;
     }
 
-    @Override
-    public void setEnemyName(String enemyName) {
-        this.enemyName = enemyName;
+    private boolean kick(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(2);
+        return true;
     }
 
-    @Override
-    public void setEnemyDmgMultiplier(int enemyDmgMultiplier) {
-
+    private boolean punch(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(1);
+        return true;
     }
 
-    @Override
-    public void setEnemyHP(int enemyHP) {
-        this.enemyHP = enemyHP;
-    }
-
-    @Override
-    public void setEnemyType(String enemyType) {
-        this.enemyType = enemyType;
-    }
-
-    public void dies(){
-        this.enemy_alive = false;
+    private  boolean charge(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(0);
+        return true;
     }
 }

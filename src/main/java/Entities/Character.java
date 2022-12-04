@@ -1,9 +1,11 @@
 package Entities;
 
+import Combat.Move;
+
+import java.util.ArrayList;
+
 public interface Character {
     String getName();
-
-    String getClassName();
 
     boolean attack(String move, Character characterBeingAttacked);
 
@@ -12,11 +14,16 @@ public interface Character {
     void setCharacterHP(int HP);
 
     public int getHP();
+    public void setHP(int HP);
 
     public void changeHP(int change);
 
     boolean isDead();
 
-    public boolean checkMove(String move);
+    String pickMove(String selectoin);
+    public void printMoves();
+
+    public ArrayList<Move> setMoves();
+    public ArrayList<Move> getMoves();
 
 }
