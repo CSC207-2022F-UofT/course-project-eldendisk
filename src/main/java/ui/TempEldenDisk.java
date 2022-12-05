@@ -1,8 +1,6 @@
-package UI;
+package ui;
 
 import entities.Player;
-
-import java.util.Scanner;
 
 public class TempEldenDisk {
     private Player player;
