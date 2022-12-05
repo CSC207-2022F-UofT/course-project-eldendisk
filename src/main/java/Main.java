@@ -3,7 +3,7 @@ import Combat.Combat;
 import ui.CombatStarts;
 import ui.EldenDisk;
 import Combat.CombatFactory;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
 
 import java.io.IOException;
 

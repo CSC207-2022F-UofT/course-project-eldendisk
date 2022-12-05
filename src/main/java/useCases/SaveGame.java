@@ -1,9 +1,8 @@
 package useCases;
-import entities.Game;
 import entities.GameStorage;
 import java.io.IOException;
-import entities.Player;
-import ui.TempEldenDisk;
+
+import entities.TempEldenDisk;
 
 public class SaveGame {
 

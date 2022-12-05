@@ -1,8 +1,7 @@
 package useCases;
 
-import entities.Game;
 import entities.Player;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
 
 public class GetInfo {
     public static String getInfo(TempEldenDisk game) {

@@ -1,7 +1,6 @@
 package useCases;
 
-import entities.Game;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
 
 import java.io.IOException;
 

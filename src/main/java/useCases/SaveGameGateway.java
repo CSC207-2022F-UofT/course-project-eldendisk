@@ -1,6 +1,5 @@
 package useCases;
-import entities.Game;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
 
 public interface SaveGameGateway {
     /**
