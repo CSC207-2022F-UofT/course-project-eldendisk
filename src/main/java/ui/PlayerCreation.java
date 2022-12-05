@@ -1,4 +1,4 @@
-package UI;
+package ui;
 
 import entities.Gunslinger;
 import entities.Mage;

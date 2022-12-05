@@ -1,14 +1,9 @@
 /* This is our main class where the meat and potatoes of the program is executed */
 import Combat.Combat;
-import UI.CombatStarts;
-import UI.EldenDisk;
-import entities.Player;
-import entities.EnemyFactory.BossEnemy;
+import ui.CombatStarts;
+import ui.EldenDisk;
 import Combat.CombatFactory;
-import UI.TempEldenDisk;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
+import ui.TempEldenDisk;
 
 public class Main {
 

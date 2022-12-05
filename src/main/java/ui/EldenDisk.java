@@ -1,4 +1,4 @@
-package UI;
+package ui;
 
 import entities.EnemyFactory.BossEnemy;
 
@@ -6,7 +6,6 @@ import entities.Gunslinger;
 import entities.Mage;
 import entities.Player;
 import entities.Samurai;
-import Item.Item;
 
 
 import java.awt.*;
