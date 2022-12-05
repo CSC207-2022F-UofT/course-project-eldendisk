@@ -120,5 +120,4 @@ public class Player implements Death, Equip{
         this.inventory.remove(item);
 
     }
-
 }
