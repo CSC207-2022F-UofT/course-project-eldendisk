@@ -31,9 +31,7 @@ public class Move {
     }
 
     @Override
-    public String toString() {
-        return moveName + " : " + moveDamage + " / x " + moveMultiplier + " to " + moveTarget;
-    }
+    public String toString() {return moveName;}
 
     public void setMoveName(String moveName) {
         this.moveName = moveName;
