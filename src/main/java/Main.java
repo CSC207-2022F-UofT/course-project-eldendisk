@@ -2,8 +2,8 @@
 import Combat.Combat;
 import UI.CombatStarts;
 import UI.EldenDisk;
-import Entities.Player;
-import Entities.EnemyFactory.BossEnemy;
+import entities.Player;
+import entities.EnemyFactory.BossEnemy;
 import Combat.CombatFactory;
 import UI.TempEldenDisk;
 

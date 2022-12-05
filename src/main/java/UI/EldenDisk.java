@@ -1,10 +1,10 @@
 package UI;
 
-import Entities.EnemyFactory.BossEnemy;
-import Entities.Gunslinger;
-import Entities.Mage;
-import Entities.Player;
-import Entities.Samurai;
+import entities.EnemyFactory.BossEnemy;
+import entities.Gunslinger;
+import entities.Mage;
+import entities.Player;
+import entities.Samurai;
 import Item.Item;
 
 import java.awt.*;

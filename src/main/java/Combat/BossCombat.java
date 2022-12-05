@@ -1,8 +1,8 @@
 package Combat;
 
-import Entities.EnemyFactory.Enemy;
-import Entities.EnemyFactory.EnemyFactory;
-import Entities.Player;
+import entities.EnemyFactory.Enemy;
+import entities.EnemyFactory.EnemyFactory;
+import entities.Player;
 
 public class BossCombat extends Combat{
     Enemy combatEnemy;

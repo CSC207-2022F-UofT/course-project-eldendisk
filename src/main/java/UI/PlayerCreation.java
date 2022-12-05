@@ -1,9 +1,9 @@
 package UI;
 
-import Entities.Gunslinger;
-import Entities.Mage;
-import Entities.Samurai;
-import Entities.Character;
+import entities.Gunslinger;
+import entities.Mage;
+import entities.Samurai;
+import entities.Character;
 
 import java.util.Scanner;
 

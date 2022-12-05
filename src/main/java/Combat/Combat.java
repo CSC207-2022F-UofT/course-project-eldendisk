@@ -1,8 +1,8 @@
 package Combat;
 
-import Entities.EnemyFactory.EnemyFactory;
-import Entities.Player;
-import Entities.Character;
+import entities.EnemyFactory.EnemyFactory;
+import entities.Player;
+import entities.Character;
 
 public class Combat {
     private Character player;

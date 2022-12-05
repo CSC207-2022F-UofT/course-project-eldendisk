@@ -1,6 +1,6 @@
 package UI;
 
-import Entities.Player;
+import entities.Player;
 
 import java.util.Scanner;
 

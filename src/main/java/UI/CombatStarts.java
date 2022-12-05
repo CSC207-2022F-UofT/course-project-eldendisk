@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import Combat.Combat;
-import Entities.Character;
+import entities.Character;
 
 public class CombatStarts {
     private Character player;
