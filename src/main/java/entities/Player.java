@@ -1,11 +1,14 @@
 package entities;
 import Combat.Move;
+
 import Item.Equip;
 import Item.Item;
 
 import java.util.ArrayList;
 
 public abstract class Player implements Character, Equip{
+
+public class Player implements Death, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
 
     /* This class initializes all the general player stats and creates the player object,
@@ -25,6 +28,7 @@ public abstract class Player implements Character, Equip{
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
     public ArrayList<Move> moves;
+
 
 
     public Player(String name) {
@@ -82,6 +86,9 @@ public abstract class Player implements Character, Equip{
 
 
 
+
+    }
+
     public void increaseMoney(int numberToIncrease){
         this.money = this.money + numberToIncrease;
     }
@@ -91,6 +98,7 @@ public abstract class Player implements Character, Equip{
     }
 
     @Override
+
     public String getName() {
         return name;
     }
@@ -104,6 +112,11 @@ public abstract class Player implements Character, Equip{
         return HP;
     }
     @Override
+
+    public int getHP() {
+        return HP;
+    }
+
     public void setHP(int HP) {
         this.HP = HP;
     }

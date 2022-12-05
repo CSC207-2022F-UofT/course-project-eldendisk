@@ -1,5 +1,6 @@
-package Enemy;
+package EnemyTest;
 
+import entities.EnemyFactory.EnemySetters;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,7 @@ public class EnemyTest {
 
     @Test(timeout = 500)
     public void testSetEnemyName() {
-        Enemy e1 = new Enemy();
+        EnemySetters e1 = new EnemySetters();
         String newName = "Keren";
         e1.setEnemyName(newName);
 
@@ -28,7 +29,7 @@ public class EnemyTest {
 
     @Test (timeout = 500)
     public void testSetEnemyHP() {
-        Enemy e2 = new Enemy();
+        EnemySetters e2 = new EnemySetters();
         int newHP = 10;
         e2.setEnemyHP(newHP);
 
@@ -37,7 +38,7 @@ public class EnemyTest {
 
     @Test (timeout = 500)
     public void testSetEnemyStats() {
-        Enemy e3 = new Enemy();
+        EnemySetters e3 = new EnemySetters();
         int newStats = 100;
         e3.setEnemyStats(newStats);
 
@@ -46,7 +47,7 @@ public class EnemyTest {
 
     @Test (timeout = 500)
     public void testSetEnemyAttackDmg() {
-        Enemy e4 = new Enemy();
+        EnemySetters e4 = new EnemySetters();
         int AttackDmg = 15;
         e4.setEnemyAttackDmg(AttackDmg);
 
@@ -55,7 +56,7 @@ public class EnemyTest {
 
     @Test (timeout = 500)
     public void testSetEnemyDmgMultiplier() {
-        Enemy e5 = new Enemy();
+        EnemySetters e5 = new EnemySetters();
         double DmgMultiplier = 1.5;
         e5.setEnemyDmgMultiplier(DmgMultiplier);
 
@@ -64,7 +65,7 @@ public class EnemyTest {
 
     @Test (timeout = 500)
     public void testSetEnemyType() {
-        Enemy e6 = new Enemy();
+        EnemySetters e6 = new EnemySetters();
         String EnemyType = "Boss";
         e6.setEnemyType(EnemyType);
 

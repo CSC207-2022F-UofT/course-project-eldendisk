@@ -3,6 +3,7 @@ import Combat.Move;
 
 import java.util.ArrayList;
 
+
 public class Mage extends Player{
     /* This class creates the mage class. The values of the class will be changed depending on the
     * enemy the player encounters*/
@@ -70,4 +71,5 @@ public class Mage extends Player{
         characterBeingAttacked.receiveDamage(0);
         return true;
     }
+
 }

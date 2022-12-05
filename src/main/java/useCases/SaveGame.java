@@ -4,6 +4,11 @@ import entities.GameStorage;
 import java.io.IOException;
 
 public class SaveGame implements SaveGameGateway {
+import entities.Player;
+
+import java.io.IOException;
+
+public class SaveGame {
     /**
      * The Use Case responsible for saving the Game to GameStorage.
      *
@@ -23,6 +28,12 @@ public class SaveGame implements SaveGameGateway {
         sb.append(game.GetId() + ",");
 //        sb.append()
         sb.append(game.GetLevel() + ",");
+    public static String GetInfo(Game game) {
+        Player p = game.GetPlayer();
+        StringBuilder sb = new StringBuilder();
+        sb.append(game.GetId() + ",");
+        sb.append(game.GetLevel() + ",");
+        sb.append(p.player_level + p.name + p.damageMultiplier + p.HP + p.XP);
         return sb.toString();
     }
 

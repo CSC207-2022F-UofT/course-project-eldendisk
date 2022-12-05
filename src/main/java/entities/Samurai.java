@@ -3,6 +3,7 @@ import Combat.Move;
 
 import java.util.ArrayList;
 
+
 public class Samurai extends Player{
     /* This class creates the Samurai class. The values of the class will be changed depending on the
      * enemy the player encounters*/
@@ -69,6 +70,5 @@ public class Samurai extends Player{
         characterBeingAttacked.receiveDamage(0);
         return true;
     }
-
 
 }

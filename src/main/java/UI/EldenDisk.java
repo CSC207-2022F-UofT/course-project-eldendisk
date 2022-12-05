@@ -1,16 +1,16 @@
 package UI;
 
 import entities.EnemyFactory.BossEnemy;
+
 import entities.Gunslinger;
 import entities.Mage;
 import entities.Player;
 import entities.Samurai;
 import Item.Item;
 
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 /* In this class the key events and dialogue of the game are implemented */

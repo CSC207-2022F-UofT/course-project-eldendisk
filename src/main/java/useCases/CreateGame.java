@@ -7,6 +7,7 @@ import entities.Player;
 import java.io.IOException;
 
 
+
 public class CreateGame implements StartGame {
     /**
      * The Use Case which creates a new Game with the input Player.
