@@ -1,6 +1,6 @@
-package Enemy;
+package entities.EnemyFactory;
 
-public class Enemy {
+public class EnemySetters {
     String enemyName;
     int enemyHP;
     int enemyStats;

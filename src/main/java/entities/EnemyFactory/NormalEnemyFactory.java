@@ -1,4 +1,4 @@
-package Enemy;
+package entities.EnemyFactory;
 
 public interface NormalEnemyFactory {
 }
