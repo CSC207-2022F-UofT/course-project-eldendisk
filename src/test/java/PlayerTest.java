@@ -1,4 +1,7 @@
 import entities.Player;
+import entities.Gunslinger;
+import entities.Mage;
+import entities.Samurai;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,8 +19,7 @@ public class PlayerTest {
 
     @Test(timeout = 500)
     public void testSetName() {
-        Player p1 = new Player("Keren", 50, 10, 1, 20, 500,
-                null, 100, 2);
+        Player p1 = new Mage("Mage", 50, 10, 2, 0, 0, 5, 1);
         String newName = "Keren";
         p1.setName(newName);
 
@@ -27,8 +29,7 @@ public class PlayerTest {
 
     @Test(timeout = 500)
     public void testSetXP() {
-        Player p2 = new Player("Keren", 50, 10, 1, 20, 500,
-                null, 100, 2);
+        Player p2 = new Gunslinger("Gunslinger", 50, 10, 2, 0, 0, 5, 1);
         int newXP = 500;
         p2.setXP(newXP);
 
