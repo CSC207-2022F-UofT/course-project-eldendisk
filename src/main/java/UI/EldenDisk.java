@@ -1,9 +1,13 @@
 package UI;
 
+import entities.EnemyFactory.BossEnemy;
+
 import entities.Gunslinger;
 import entities.Mage;
 import entities.Player;
 import entities.Samurai;
+import Item.Item;
+
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -26,12 +30,12 @@ public class EldenDisk {
         System.out.println("-------------------------------------------------------");
         System.out.println("Welcome to Elden Disk!");
         System.out.println("-------------------------------------------------------");
-        System.out.println("""
-                Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\s
-                You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\s
-                On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.
-                Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.
-                Only when you beat all the bosses, will you be declared the Elden Prince.\s""");
+//        System.out.println("""
+//                Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\s
+//                You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\s
+//                On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.
+//                Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.
+//                Only when you beat all the bosses, will you be declared the Elden Prince.\s""");
         System.out.println("-------------------------------------------------------");
         System.out.println("Type quit to exit at anytime.");
         System.out.println("-------------------------------------------------------");
@@ -71,14 +75,14 @@ public class EldenDisk {
 
 
     public void bossFight1(Player user) {
-        System.out.println("""
-                    You wake up dazed and confused, wondering where you are\s
-                    'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
-                    Especially not after those Monday night football benders you have with Xavier and the boys \s
-                    You walk towards the exit and as you leave, the wonderful view of Limegrave encapsulates you\s
-                    'Should not have ate those mushrooms they were definitely not Portabello'\s
-                    As you exit a foe stands before you O_O\s
-                    """);
+//        System.out.println("""
+//                    You wake up dazed and confused, wondering where you are\s
+//                    'Oh well', you say to yourself as this is not the first time you've awakened not knowing where you are \s
+//                    Especially not after those Monday night football benders you have with Xavier and the boys \s
+//                    You walk towards the exit and as you leave, the wonderful view of Limegrave encapsulates you\s
+//                    'Should not have ate those mushrooms they were definitely not Portabello'\s
+//                    As you exit a foe stands before you O_O\s
+//                    """);
         System.out.println("A Sapling Sentinel Appears before you and he starts swinging at you (You owe him money)");
         System.out.println("IT IS TIMED TO FIGHT OH WEARY TARNISHED");
         Scanner scanner = new Scanner(System.in);
@@ -135,12 +139,12 @@ public class EldenDisk {
 
     public static void EndGameDialogue() {
         System.out.println("-------------------------------------------------------");
-        System.out.println("""
-                The fallen leaves tell a story\\s
-                                Of how a Tarnished became Elden Prince\\s
-                                In our home, across the fog, the Lands Between.\\s
-                                Our seed will look back upon us and recall\\s
-                                The Age of the Elden Prince""");
+//        System.out.println("""
+//                The fallen leaves tell a story\\s
+//                                Of how a Tarnished became Elden Prince\\s
+//                                In our home, across the fog, the Lands Between.\\s
+//                                Our seed will look back upon us and recall\\s
+//                                The Age of the Elden Prince""");
         System.out.println("-------------------------------------------------------");
         LargeText("THE END");
 

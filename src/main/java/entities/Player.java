@@ -1,8 +1,12 @@
 package entities;
+import Combat.Move;
+
 import Item.Equip;
 import Item.Item;
 
 import java.util.ArrayList;
+
+public abstract class Player implements Character, Equip{
 
 public class Player implements Death, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
@@ -23,6 +27,9 @@ public class Player implements Death, Equip{
 
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
+    public ArrayList<Move> moves;
+
+
 
     public Player(String name) {
         this.name = name;
@@ -30,6 +37,56 @@ public class Player implements Death, Equip{
         this.money = 10;
         this.XP = 1;
         this.inventory = new ArrayList<>();
+        this.moves = setMoves();
+    }
+    // following methods are the methods in Character interface.
+    @Override
+    public abstract boolean attack(String move, Character characterBeingAttacked);
+
+    @Override
+    public void receiveDamage(int damage) {
+        changeHP(damage);
+    }
+
+    @Override
+    public void setCharacterHP(int HP) {
+        this.HP = HP;
+    }
+
+
+    @Override
+    public void changeHP(int change) {
+        this.HP = this.HP - change;
+    }
+
+    @Override
+    public boolean isDead() {
+        return this.player_alive;
+    }
+
+    @Override
+    public String pickMove(String selection) {
+        // pre condition : selection is either 1, 2, 3, 4
+        return getMoves().get(Integer.valueOf(selection) - 1).toString();
+    }
+
+    @Override
+    public abstract ArrayList<Move> setMoves();
+    // this sets character's moves according to its class (or type)
+    @Override
+    public ArrayList<Move> getMoves() {return this.moves;}
+
+
+    public void printMoves()  {
+        for (int i = 0 ; i < 4 ; i++) {
+            System.out.println((i+1) + " : " + getMoves().get(i).toString());
+        }
+    }
+
+
+
+
+
     }
 
     public void increaseMoney(int numberToIncrease){
@@ -40,6 +97,8 @@ public class Player implements Death, Equip{
         this.money = this.money + numberToDecrease;
     }
 
+    @Override
+
     public String getName() {
         return name;
     }
@@ -47,6 +106,12 @@ public class Player implements Death, Equip{
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public int getHP() {
+        return HP;
+    }
+    @Override
 
     public int getHP() {
         return HP;
@@ -79,6 +144,7 @@ public class Player implements Death, Equip{
     public void setMoney(int money) {
         this.money = money;
     }
+
 
     public int getXP() {
         return XP;
@@ -120,4 +186,5 @@ public class Player implements Death, Equip{
         this.inventory.remove(item);
 
     }
+
 }

@@ -1,6 +1,9 @@
 package useCases;
 import entities.Game;
 import entities.GameStorage;
+import java.io.IOException;
+
+public class SaveGame implements SaveGameGateway {
 import entities.Player;
 
 import java.io.IOException;
@@ -18,6 +21,13 @@ public class SaveGame {
         GameStorage.Add(GetInfo(game));
         return true;
     }
+
+    @Override
+    public String GetInfo(Game game) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(game.GetId() + ",");
+//        sb.append()
+        sb.append(game.GetLevel() + ",");
     public static String GetInfo(Game game) {
         Player p = game.GetPlayer();
         StringBuilder sb = new StringBuilder();
