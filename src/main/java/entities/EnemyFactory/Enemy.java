@@ -29,16 +29,20 @@ public abstract class Enemy implements Character {
         this.enemyMoves = setMoves();
 
     }
+
     // use the following abstract methods to set the attributes of Enemy object.
     // implementation depends on the enemyType.
     abstract String setName(String name);
+
     abstract int setInitialEnemyHP();
+
     abstract int setAttackDmg();
-    abstract  double setDamageMultiplier();
 
-    public Player getPlayer() {return this.player;}
+    abstract double setDamageMultiplier();
 
-
+    public Player getPlayer() {
+        return this.player;
+    }
 
 
     //abstract methods from Character interface
@@ -56,12 +60,16 @@ public abstract class Enemy implements Character {
     public void changeHP(int change) {
         this.HP = this.getHP() - change;
     }
+
     @Override
     public void receiveDamage(int damage) {
         changeHP(damage); //value should be damage of attack * dmg mult
     }
+
     @Override
-    public void setCharacterHP(int HP) {this.HP = HP;}
+    public void setCharacterHP(int HP) {
+        this.HP = HP;
+    }
 
     @Override
     public boolean isDead() {
@@ -79,26 +87,16 @@ public abstract class Enemy implements Character {
     public ArrayList<Move> getMoves() {
         return this.enemyMoves;
     }
+
     @Override
     public abstract ArrayList<Move> setMoves();
+
     @Override
-    public void printMoves() { ;}
+    public void printMoves() {
+        ;
+    }
+
     @Override
     public abstract boolean attack(String move, Character characterBeingAttacked);
 
-public interface Enemy { //this should be an interface
-    public int getEnemyAttackDmg();
-    public int getEnemyHP();
-    public int getEnemyDmgMultiplier();
-    public int getEnemyStats();
-    public String getEnemyName();
-    public String getEnemyType();
-
-    public void setEnemyName(String enemyName);
-    public void setEnemyHP(int enemyHP);
-    public void setEnemyStats(int enemyStats);
-    public void setEnemyAttackDmg(int enemyAttackDmg);
-    public void setEnemyDmgMultiplier(int enemyDmgMultiplier);
-    public void setEnemyType(String enemyType);
 }
-
