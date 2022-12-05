@@ -2,15 +2,16 @@ package useCases;
 
 import entities.Game;
 import entities.Player;
+import ui.TempEldenDisk;
 
 public class GetInfo {
-    public static String getInfo(Game game) {
+    public static String getInfo(TempEldenDisk game) {
 
-        Player p = game.GetPlayer();
+        Player p = game.getPlayer();
         StringBuilder sb = new StringBuilder();
         sb.append(game.GetId() + ",");
-        sb.append(game.GetLevel() + ",");
-        sb.append(p.player_level + p.name + p.damageMultiplier + p.HP + p.XP);
+        sb.append(game.getGameLvl() + ",");
+        sb.append(p.player_level + "," + p.name + "," + p.damageMultiplier + "," + p.HP + "," + p.XP);
         return sb.toString();
 
     }

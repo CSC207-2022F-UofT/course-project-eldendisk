@@ -1,6 +1,7 @@
 package useCases;
 
 import entities.Game;
+import ui.TempEldenDisk;
 
 import java.io.IOException;
 
@@ -11,7 +12,7 @@ public class ExitGame {
      * @throws IOException
      */
 
-    public void Exit(Game game) throws IOException {
+    public void Exit(TempEldenDisk game) throws IOException {
         SaveGame.save(game);
     }
 

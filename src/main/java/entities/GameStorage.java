@@ -66,13 +66,15 @@ public class GameStorage {
      * @throws IOException
      */
     public static int GetLatestId () throws IOException {
+        int last_id = 1;
         Scanner sc = new Scanner(GameList);
         while (sc.hasNext()){
+            last_id += 1;
             sc.next();
         }
         String last = sc.toString();
         sc.close();
-        return (int) last.charAt(0);
+        return last_id;
 
     }
 }
