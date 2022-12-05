@@ -1,5 +1,5 @@
-package Entities.EnemyFactory;
-import Entities.Player;
+package entities.EnemyFactory;
+import entities.Player;
 import java.util.Objects;
 
 public class EnemyFactory {

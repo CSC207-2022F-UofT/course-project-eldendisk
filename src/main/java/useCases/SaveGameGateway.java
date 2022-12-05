@@ -1,5 +1,5 @@
-package UseCases;
-import Entities.Game;
+package useCases;
+import entities.Game;
 
 public interface SaveGameGateway {
     /**

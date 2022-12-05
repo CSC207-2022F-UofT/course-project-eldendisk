@@ -1,27 +1,27 @@
-package Entities;
+package entities;
 import Combat.Move;
 
 import java.util.ArrayList;
 
-public class Gunslinger extends Player {
-    /* This class creates the Gunslinger class. The values of the class will be changed depending on the
-     * enemy the player encounters*/
+public class Mage extends Player{
+    /* This class creates the mage class. The values of the class will be changed depending on the
+    * enemy the player encounters*/
     //TODO implement combat methods
 
-    public Gunslinger(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
+    public Mage(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
         super(name);
     }
 
-    public Gunslinger(String name) {
+    public Mage(String name) {
         super(name);
     }
 
     @Override
     public ArrayList<Move> setMoves() {
-        Move first = new Move("Go Go Glock", 1, 1, "Opponent");
-        Move second = new Move("gun-fu", 1, 1, "Opponent");
-        Move third = new Move("360 NoScope", 1, 1, "Opponent");
+        Move first = new Move("Flame of the Fell God", 1, 1, "Opponent");
+        Move second = new Move("Comet Azur", 1, 1, "Opponent");
+        Move third = new Move("Stars of Ruin", 1, 1, "Opponent");
         Move fourth = new Move("Execution", 1, 1, "Opponent");
 
         ArrayList<Move> moves = new ArrayList<Move>();
@@ -32,16 +32,17 @@ public class Gunslinger extends Player {
 
         return moves;
     }
+
     @Override
     public boolean attack(String move, Character characterBeingAttacked) {
 
         switch (move) {
-            case "Go Go Glock":
-                return gogoGlock(characterBeingAttacked);
-            case "gun-fu":
-                return gunfu(characterBeingAttacked);
-            case "360 NoScope":
-                return noScope(characterBeingAttacked);
+            case "Flame of the Fell God":
+                return flameOfTheFellGod(characterBeingAttacked);
+            case "Comet Azur":
+                return cometAzur(characterBeingAttacked);
+            case "Stars of Ruin":
+                return startsOfRuins(characterBeingAttacked);
             case "Execution":
                 return execution(characterBeingAttacked);
             default:
@@ -50,17 +51,17 @@ public class Gunslinger extends Player {
         }
     }
 
-    private boolean gogoGlock(Character characterBeingAttacked) {
+    private boolean flameOfTheFellGod(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(2);
         return true;
     }
 
-    private boolean gunfu(Character characterBeingAttacked) {
+    private boolean cometAzur(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(2);
         return true;
     }
 
-    private boolean noScope(Character characterBeingAttacked) {
+    private boolean startsOfRuins(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(1);
         return true;
     }

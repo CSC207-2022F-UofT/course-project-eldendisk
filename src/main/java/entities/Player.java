@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 import Combat.Move;
 import Item.Equip;
 import Item.Item;

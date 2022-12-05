@@ -1,8 +1,8 @@
-package UseCases;
+package useCases;
 
-import Entities.Game;
-import Entities.GameStorage;
-import Entities.Player;
+import entities.Game;
+import entities.GameStorage;
+import entities.Player;
 
 import java.io.IOException;
 

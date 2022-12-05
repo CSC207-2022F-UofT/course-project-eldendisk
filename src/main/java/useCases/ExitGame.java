@@ -1,6 +1,6 @@
-package UseCases;
+package useCases;
 
-import Entities.Game;
+import entities.Game;
 
 import java.io.IOException;
 

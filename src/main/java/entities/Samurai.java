@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 import Combat.Move;
 
 import java.util.ArrayList;

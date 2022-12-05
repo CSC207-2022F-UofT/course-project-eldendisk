@@ -1,7 +1,7 @@
-package Entities.EnemyFactory;
+package entities.EnemyFactory;
 import Combat.Move;
-import Entities.Player;
-import Entities.Character;
+import entities.Player;
+import entities.Character;
 
 import java.util.ArrayList;
 
