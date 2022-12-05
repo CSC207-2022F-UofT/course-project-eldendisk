@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public abstract class Player implements Character, Equip{
 
-public class Player implements Death, Equip{
     //TODO implement interface for combat, death, and any other things that each player would do.
 
     /* This class initializes all the general player stats and creates the player object,
@@ -86,9 +85,6 @@ public class Player implements Death, Equip{
 
 
 
-
-    }
-
     public void increaseMoney(int numberToIncrease){
         this.money = this.money + numberToIncrease;
     }
@@ -108,11 +104,6 @@ public class Player implements Death, Equip{
     }
 
     @Override
-    public int getHP() {
-        return HP;
-    }
-    @Override
-
     public int getHP() {
         return HP;
     }
