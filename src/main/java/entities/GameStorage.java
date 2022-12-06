@@ -52,7 +52,7 @@ public class GameStorage {
         String line = br.readLine();
         while (line!= null) {
             String[] info = line.split(",");
-            if (info[0] == String.valueOf(id)) {
+            if (info[0].equals(String.valueOf(id))) {
                 return info;
             }
             line = br.readLine();

@@ -25,6 +25,7 @@ public class LoadGame implements StartGame{
             String lv = GameStorage.FindGame(id)[2];
             TempEldenDisk g = new TempEldenDisk();
             g.SetLvl(Integer.parseInt(lv));
+            g.setPlayer(player);
             return g;
         }
         return new TempEldenDisk();
