@@ -1,8 +1,8 @@
 package useCases;
-import entities.Game;
 import entities.GameStorage;
 import java.io.IOException;
-import entities.Player;
+
+import entities.TempEldenDisk;
 
 public class SaveGame {
 
@@ -15,7 +15,7 @@ public class SaveGame {
      * @throws IOException
      */
 
-    public static boolean save(Game game) throws IOException {
+    public static boolean save(TempEldenDisk game) throws IOException {
         GameStorage.Add(GetInfo.getInfo(game));
         return true;
     }

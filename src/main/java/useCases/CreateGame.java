@@ -1,8 +1,7 @@
 package useCases;
 
-import entities.Game;
-import entities.GameStorage;
 import entities.Player;
+import entities.TempEldenDisk;
 
 import java.io.IOException;
 
@@ -19,9 +18,8 @@ public class CreateGame implements StartGame {
      */
 
     @Override
-    public Game StartGame(Player player, int id) throws IOException {
-        int new_id = GameStorage.GetLatestId() + 1;
-        Game ret = new Game(player, new_id);
+    public TempEldenDisk StartGame(Player player, int id) throws IOException {
+        TempEldenDisk ret = new TempEldenDisk();
         return ret;
     }
 }

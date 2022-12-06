@@ -3,12 +3,14 @@ import Combat.Combat;
 import ui.CombatStarts;
 import ui.EldenDisk;
 import Combat.CombatFactory;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
+
+import java.io.IOException;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        BossEnemy boss1 = new BossEnemy("player", "boss_one");
 

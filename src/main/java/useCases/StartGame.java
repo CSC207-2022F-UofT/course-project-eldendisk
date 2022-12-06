@@ -1,11 +1,11 @@
 package useCases;
-import entities.Game;
 
 import entities.Player;
+import entities.TempEldenDisk;
 
 
 import java.io.IOException;
 
 public interface StartGame {
-    Game StartGame(Player player, int id) throws IOException;
+    TempEldenDisk StartGame(Player player, int id) throws IOException;
 }

@@ -52,7 +52,7 @@ public class GameStorage {
         String line = br.readLine();
         while (line!= null) {
             String[] info = line.split(",");
-            if (info[0] == String.valueOf(id)) {
+            if (info[0].equals(String.valueOf(id))) {
                 return info;
             }
             line = br.readLine();
@@ -66,13 +66,15 @@ public class GameStorage {
      * @throws IOException
      */
     public static int GetLatestId () throws IOException {
+        int last_id = 1;
         Scanner sc = new Scanner(GameList);
         while (sc.hasNext()){
+            last_id += 1;
             sc.next();
         }
         String last = sc.toString();
         sc.close();
-        return (int) last.charAt(0);
+        return last_id;
 
     }
 }

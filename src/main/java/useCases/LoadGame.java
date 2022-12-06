@@ -1,9 +1,9 @@
 package useCases;
 
-import entities.Game;
 import entities.GameStorage;
 
 import entities.Player;
+import entities.TempEldenDisk;
 
 
 import java.io.*;
@@ -19,15 +19,16 @@ public class LoadGame implements StartGame{
      * @throws IOException
      */
     @Override
-    public Game StartGame(Player player, int id) throws IOException {
+    public TempEldenDisk StartGame(Player player, int id) throws IOException {
         int i = 0;
         if (Integer.parseInt(GameStorage.FindGame(id)[0])!= i){
             String lv = GameStorage.FindGame(id)[2];
-            Game g = new Game(player, id);
-            g.SetLevel(Integer.parseInt(lv));
+            TempEldenDisk g = new TempEldenDisk();
+            g.SetLvl(Integer.parseInt(lv));
+            g.setPlayer(player);
             return g;
         }
-        return new Game(player, id);
+        return new TempEldenDisk();
     }
 
 
