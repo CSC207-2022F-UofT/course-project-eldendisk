@@ -7,7 +7,7 @@ import java.io.IOException;
 
 
 
-public class CreateGame implements StartGame {
+public class CreateGame {
     /**
      * The Use Case which creates a new Game with the input Player.
      *
@@ -17,9 +17,7 @@ public class CreateGame implements StartGame {
      * @throws IOException when Game could not be started.
      */
 
-    @Override
-    public TempEldenDisk StartGame(Player player, int id) throws IOException {
-        TempEldenDisk ret = new TempEldenDisk();
-        return ret;
+    public TempEldenDisk GetNewGame(Player player, int id) throws IOException {
+        return new TempEldenDisk();
     }
 }

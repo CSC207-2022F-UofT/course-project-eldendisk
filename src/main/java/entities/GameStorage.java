@@ -77,5 +77,6 @@ public class GameStorage {
         return last_id;
 
     }
+
 }
 

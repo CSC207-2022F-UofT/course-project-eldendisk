@@ -10,7 +10,7 @@ public class GetInfo {
         StringBuilder sb = new StringBuilder();
         sb.append(game.GetId() + ",");
         sb.append(game.getGameLvl() + ",");
-        sb.append(p.player_level + "," + p.name + "," + p.damageMultiplier + "," + p.HP + "," + p.XP);
+        sb.append(p.name + "," + p.player_level + "," + p.damageMultiplier + "," + p.HP + "," + p.XP);
         return sb.toString();
 
     }

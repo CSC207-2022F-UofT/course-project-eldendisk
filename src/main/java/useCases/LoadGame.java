@@ -9,7 +9,7 @@ import entities.TempEldenDisk;
 import java.io.*;
 
 
-public class LoadGame implements StartGame{
+public class LoadGame {
     /**
      * The Use Case that loads an old Game which the User picked to start.
      *
@@ -18,14 +18,13 @@ public class LoadGame implements StartGame{
      * @return A Game to be started.
      * @throws IOException
      */
-    @Override
-    public TempEldenDisk StartGame(Player player, int id) throws IOException {
+
+    public TempEldenDisk ResumeGame(int id) throws IOException {
         int i = 0;
-        if (Integer.parseInt(GameStorage.FindGame(id)[0])!= i){
-            String lv = GameStorage.FindGame(id)[2];
+        String[] info = GameStorage.FindGame(id);
+        if (Integer.parseInt(info[0]) != i){
             TempEldenDisk g = new TempEldenDisk();
-            g.SetLvl(Integer.parseInt(lv));
-            g.setPlayer(player);
+            Player p = Player()
             return g;
         }
         return new TempEldenDisk();
