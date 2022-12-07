@@ -73,7 +73,7 @@ public class GameStorage {
         sc.close();
         if (last.isEmpty()) {
             return 1;}
-        else {return (int) last.charAt(0);}
+        else {return Integer.parseInt(last.split(",")[0]);}
 
     }
 }
