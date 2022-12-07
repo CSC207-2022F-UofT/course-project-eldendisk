@@ -32,7 +32,6 @@ public class EditCSV {
                     if ((int) line.charAt(0) != remove_line){
                         pw.println(line);
                     }
-
                 }
                 sc.close();
                 pw.flush();
@@ -40,12 +39,10 @@ public class EditCSV {
                 old.delete();
                 File dump = new File(filepath);
                 newf.renameTo(dump);
-
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-
     }
 
     public static void OverWrite(String filepath, String overwriting_info, int id) {
@@ -67,7 +64,6 @@ public class EditCSV {
                 else{
                     pw.println(line);
                 }
-
             }
             sc.close();
             pw.flush();
@@ -75,12 +71,10 @@ public class EditCSV {
             old.delete();
             File dump = new File(filepath);
             newf.renameTo(dump);
-
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }
 

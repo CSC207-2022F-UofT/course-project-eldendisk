@@ -14,7 +14,7 @@ public class CreateGame{
      * @throws IOException when TempEldenDisk(game) is not created successfully.
      */
 
-    public TempEldenDisk StartGame() throws IOException {
+    public TempEldenDisk GetNewGame() throws IOException {
         return new TempEldenDisk();
     }
 }
