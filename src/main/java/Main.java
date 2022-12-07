@@ -1,9 +1,11 @@
-/* This is our main class where the meat and potatoes of the program is executed */
 import Combat.Combat;
 import ui.CombatStarts;
 import ui.EldenDisk;
 import Combat.CombatFactory;
 import entities.TempEldenDisk;
+import controllers.CombatController;
+import presenters.CombatPresenter;
+import useCases.CombatUseCase;
 
 import java.io.IOException;
 
@@ -21,7 +23,12 @@ public class Main {
         int gameLvl = 1;
         while (gameLvl < 4) {
             Combat combat = CombatFactory.createCombat(game.getPlayer(), "Boss");
-            CombatStarts.startCombat(combat);
+
+            CombatPresenter combatPresenter = new CombatPresenter();
+            CombatUseCase combatUseCase = new CombatUseCase(combat, combatPresenter);
+            CombatController combatController = new CombatController(combatUseCase);
+            CombatStarts.startCombat(combatController);
+
             if (!game.getPlayer().isDead()) {
                 gameLvl++;
                 game.getPlayer().setHP(1);
@@ -33,5 +40,5 @@ public class Main {
 //        EldenDisk.LargeText("THE END");
 
         }
-}
+    }
 }
