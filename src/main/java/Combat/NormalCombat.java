@@ -5,9 +5,9 @@ import entities.EnemyFactory.EnemyFactory;
 import entities.Player;
 
 
+
 public class NormalCombat extends Combat {
     /// kept this class in case we implement normal combats
-
     Enemy combatEnemy;
     String player;
     int gameLevel;
