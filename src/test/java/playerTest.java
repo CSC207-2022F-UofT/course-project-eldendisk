@@ -1,14 +1,13 @@
 import entities.Player;
 import entities.Gunslinger;
 import entities.Mage;
-import entities.Samurai;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PlayerTest {
+public class playerTest {
     @Before
     public void setUp() {
     }
