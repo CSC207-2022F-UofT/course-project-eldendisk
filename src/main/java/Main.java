@@ -19,22 +19,38 @@ public class Main {
 
         while (game.getGameLvl() < 4) {
             Combat combat;
-
-            switch (game.getPlayer().getPlayer_level()) {
+            // combat creation based on the game level and player level
+            // First Boss appears when game level is 1 and player level is greater than or equal to 3.
+            // Second Boss appears when game level is 1 and player level is greater than or equal to 6.
+            // Third Boss appears when game level is 1 and player level is greater than or equal to 9.
+            // Otherwise, mini monster appears.
+            switch (game.getGameLvl()) {
+                case 1:
+                    if (game.getPlayer().getPlayer_level() >= 3) {
+                        combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
+                        break;
+                    }
+                case 2:
+                    if (game.getPlayer().getPlayer_level() >= 6) {
+                        combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
+                        break;
+                    }
                 case 3:
-                case 6:
-                case 9:
-                    combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
-                    break;
-
-                default :
+                    if (game.getPlayer().getPlayer_level() >= 9) {
+                        combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
+                        break;
+                    }
+                default:
                     combat = CombatFactory.createCombat(game.getPlayer(), "Normal", game.getGameLvl());
+
             }
 
             CombatStarts.startCombat(combat);
 
-            // depending on the result (player alive = victory / player dead = defeat),
-            // game level increase or player gets recovery.
+            // depending on the result (enemy alive = defeat , enemy dead = victory),
+            // if player won the combat and the enemy was a boss enemy, game level increase by one.
+            // If player lost the combat, player gets recovery.
+
             if (combat.getEnemy().isDead()) {
                 if (combat.getEnemy() instanceof BossEnemy) {
                     game.increaseGameLvl();

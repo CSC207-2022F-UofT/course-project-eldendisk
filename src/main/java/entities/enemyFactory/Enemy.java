@@ -32,7 +32,7 @@ public abstract class Enemy implements Character {
 
     // use the following abstract methods to set the attributes of Enemy object.
     // implementation depends on the enemyType.
-    abstract void setName(String name);
+    abstract void setName();
 
     abstract int setInitialEnemyHP();
 

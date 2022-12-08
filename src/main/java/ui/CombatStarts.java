@@ -74,6 +74,7 @@ public class CombatStarts {
                 } else if (playerMove.equals("1") || playerMove.equals("2") || playerMove.equals("3") || playerMove.equals("4")) {
 
                     combat.getPlayer().attack(combat.getPlayer().pickMove(playerMove), combat.getEnemy());
+                    System.out.println(combat.getPlayer().pickMove(playerMove));
 
                 } else {
 

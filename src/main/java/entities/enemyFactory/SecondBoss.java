@@ -4,10 +4,20 @@ import entities.Character;
 import entities.Player;
 
 public class SecondBoss extends BossEnemy {
+    String enemyName;
 
     public SecondBoss(Player player) {
         super(player);
-        setName("Second Boss");
+        setName();
+    }
+
+    @Override
+    void setName() {
+        this.enemyName = "Second Boss";
+    }
+    @Override
+    public String getName() {
+        return this.enemyName;
     }
 
     @Override

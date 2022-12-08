@@ -16,10 +16,18 @@ public class NormalEnemy extends Enemy {
 
     public NormalEnemy(Player player) { // String player -> Player player;
         super(player, "Normal");
-        setName("mini Monster");
+        setName();
+
 
     }
-
+    @Override
+    void setName() {
+        this.enemyName = "mini monster";
+    }
+    @Override
+    public String getName() {
+        return this.enemyName;
+    }
     //setter methods
     @Override
     public int setInitialEnemyHP() {
@@ -91,10 +99,6 @@ public class NormalEnemy extends Enemy {
     private boolean charge(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(5);
         return true;
-    }
-    @Override
-    public void setName(String enemyName) {
-        this.enemyName = enemyName;
     }
 
 

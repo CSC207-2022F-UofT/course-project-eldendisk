@@ -4,12 +4,22 @@ import entities.Character;
 import entities.Player;
 
 public class FirstBoss extends BossEnemy{
+    String enemyName;
 
     public FirstBoss(Player player) {
         super(player);
-        setName("First Boss");
+        setName();
     }
 
+    @Override
+    void setName() {
+        this.enemyName = "First Boss";
+    }
+
+    @Override
+    public String getName() {
+        return this.enemyName;
+    }
     @Override
     protected boolean roar(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(2);

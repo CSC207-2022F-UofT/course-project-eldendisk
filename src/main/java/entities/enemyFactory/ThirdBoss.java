@@ -4,10 +4,19 @@ import entities.Character;
 import entities.Player;
 
 public class ThirdBoss extends BossEnemy{
+    String enemyName;
     public ThirdBoss(Player player) {
     super(player);
-    setName("First Boss");
+    setName();
 }
+    @Override
+    void setName() {
+        this.enemyName = "Third Boss";
+    }
+    @Override
+    public String getName() {
+        return this.enemyName;
+    }
 
     @Override
     protected boolean roar(Character characterBeingAttacked) {
