@@ -10,9 +10,9 @@ public class BossCombat extends Combat{
     Player player;
     int gameLevel;
 
-    public BossCombat(Player player) {
-        super(player, "Boss");
-        this.combatEnemy = EnemyFactory.createEnemy(player, "Boss");
+    public BossCombat(Player player, int gameLevel) {
+        super(player, "Boss", gameLevel);
+        this.combatEnemy = EnemyFactory.createEnemy(player, "Boss", gameLevel);
 
     }
 }

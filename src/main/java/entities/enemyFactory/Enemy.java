@@ -18,7 +18,7 @@ public abstract class Enemy implements Character {
     private ArrayList<Move> enemyMoves;
 
     public Enemy(Player player, String enemyType) {
-        this.enemyName = setName("Enemy");
+        this.enemyName = "";
         this.className = enemyType;
         this.player = player;
 
@@ -32,7 +32,7 @@ public abstract class Enemy implements Character {
 
     // use the following abstract methods to set the attributes of Enemy object.
     // implementation depends on the enemyType.
-    abstract String setName(String name);
+    abstract void setName(String name);
 
     abstract int setInitialEnemyHP();
 

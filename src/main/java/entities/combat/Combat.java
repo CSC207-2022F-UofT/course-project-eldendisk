@@ -8,9 +8,9 @@ public class Combat {
     private Player player;
     private Character enemy;
 
-    public Combat(Player player, String combatType) {
+    public Combat(Player player, String combatType, int gameLevel) {
         this.player = player;
-        this.enemy = EnemyFactory.createEnemy(player, combatType);
+        this.enemy = EnemyFactory.createEnemy(player, combatType, gameLevel);
     }
     //    public Scanner getScanner() {return this.scanner;}
     public Player getPlayer() {

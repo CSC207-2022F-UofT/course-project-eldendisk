@@ -5,7 +5,7 @@ import entities.Character;
 
 import java.util.ArrayList;
 
-public class BossEnemy extends Enemy {
+public abstract class BossEnemy extends Enemy {
 
     private String enemyName;
     private int enemyHP;
@@ -19,10 +19,8 @@ public class BossEnemy extends Enemy {
         super(player, "Boss");
     }
 
-    @Override
-    public String setName(String name) {
-        return name;
-    }
+
+    public void setName(String name) {this.enemyName = name;}
 
     @Override
     public int setInitialEnemyHP() {
@@ -78,24 +76,15 @@ public class BossEnemy extends Enemy {
         this.setHP(HP);
     }
 
-    private boolean roar(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
-        return true;
-    }
+    // enemy moves
 
-    private boolean kick(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(3);
-        return true;
-    }
+    protected abstract boolean roar(Character characterBeingAttacked);
 
-    private boolean punch(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(4);
-        return true;
-    }
+    protected abstract boolean kick(Character characterBeingAttacked);
 
-    private boolean charge(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(10);
-        return true;
-    }
 
+    protected abstract boolean punch(Character characterBeingAttacked);
+
+
+    protected abstract boolean charge(Character characterBeingAttacked);
 }

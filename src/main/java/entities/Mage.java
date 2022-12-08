@@ -68,7 +68,7 @@ public class Mage extends Player{
     }
 
     private boolean execution(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(10);
+        characterBeingAttacked.receiveDamage(100);
         return true;
     }
 

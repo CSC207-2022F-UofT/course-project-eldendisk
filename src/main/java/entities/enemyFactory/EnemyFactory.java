@@ -3,16 +3,21 @@ import entities.Player;
 import java.util.Objects;
 
 public class EnemyFactory {
-    public static Enemy createEnemy(Player player, String enemyType) {
+    public static Enemy createEnemy(Player player, String enemyType, int gameLevel) {
         // Create Enemy based on the enemyType and Player
         if (Objects.equals(enemyType, "Boss")) {
-            return new BossEnemy(player);
-        } else if (Objects.equals(enemyType, "Normal")) {
-            return new NormalEnemy(player);
+            switch (gameLevel) {
+                case 1:
+                    return new FirstBoss(player);
+                case 2:
+                    return new SecondBoss(player);
+                case 3:
+                    return new ThirdBoss(player);
+            }
         } else {
-            return null;
+            return new NormalEnemy(player);
         }
-
+        return new NormalEnemy(player);
     }
-}
 
+}

@@ -12,9 +12,9 @@ public class NormalCombat extends Combat {
     String player;
     int gameLevel;
 
-    public NormalCombat(Player player) {
-        super(player, "Normal");
-        this.combatEnemy = EnemyFactory.createEnemy(player, "Normal");
+    public NormalCombat(Player player, int gameLevel) {
+        super(player, "Normal", gameLevel);
+        this.combatEnemy = EnemyFactory.createEnemy(player, "Normal", gameLevel);
 
     }
 }

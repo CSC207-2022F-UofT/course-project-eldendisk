@@ -6,13 +6,13 @@ import entities.Player;
 import java.util.Objects;
 
 public class CombatFactory {
-    public static Combat createCombat(Player player, String combatType) {
+    public static Combat createCombat(Player player, String combatType, int gameLevel) {
         if (Objects.equals(combatType, "Boss")) {
-            return new BossCombat(player);
-        } else if (Objects.equals(combatType, "Normal")) {
-            return new NormalCombat(player);
-        } else { //
-            return null;
+            return new BossCombat(player, gameLevel);
+
+        } else {
+            return new NormalCombat(player, gameLevel);
+
     }
     };
 
