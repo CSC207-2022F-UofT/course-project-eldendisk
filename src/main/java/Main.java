@@ -23,12 +23,17 @@ public class Main {
             Combat combat = CombatFactory.createCombat(game.getPlayer(), "Boss");
             CombatStarts.startCombat(combat);
             gameLvl++;
-            System.out.println("Current Level is " + gameLvl);
+            if (gameLvl < 4) {
+                System.out.println("Current Level is " + gameLvl);
+                System.out.println("");
+            }
+        }
+
+        System.out.println("Congratulation! You won the game!");
 
 
 //        EldenDisk.EndGameDialogue();
 //        EldenDisk.LargeText("THE END");
 
-        }
 }
 }
