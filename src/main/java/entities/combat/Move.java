@@ -1,4 +1,4 @@
-package Combat;
+package entities.combat;
 
 public class Move {
     // moves for the player and enemies

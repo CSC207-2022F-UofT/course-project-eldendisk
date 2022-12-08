@@ -1,5 +1,5 @@
 package entities;
-import Combat.Move;
+import entities.combat.Move;
 
 import java.util.ArrayList;
 

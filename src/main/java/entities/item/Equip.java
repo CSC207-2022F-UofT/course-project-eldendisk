@@ -1,5 +1,5 @@
-package Item;
-import Item.Item;
+package entities.item;
+
 public interface Equip {
 
     void equipItem(Item item);

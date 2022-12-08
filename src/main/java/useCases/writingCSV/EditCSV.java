@@ -1,4 +1,4 @@
-package WritingCSV;
+package useCases.writingCSV;
 
 import java.io.*;
 import java.util.Scanner;

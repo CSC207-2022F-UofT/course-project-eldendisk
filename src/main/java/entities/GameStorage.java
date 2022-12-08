@@ -1,5 +1,7 @@
 package entities;
 
+import useCases.writingCSV.EditCSV;
+
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,7 +23,7 @@ public class GameStorage {
      */
     public static void Add(String game) throws IOException {
         try{
-        WritingCSV.EditCSV.Write(game, GameList.getPath());}
+        EditCSV.Write(game, GameList.getPath());}
 
         catch (IOException e)
         {
@@ -35,7 +37,7 @@ public class GameStorage {
      */
     public static void Remove(int id) throws IOException {
         try{
-            WritingCSV.EditCSV.DeleteLineById(GameList.getPath(), id);
+            EditCSV.DeleteLineById(GameList.getPath(), id);
             }
         catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Failed to remove game.");
