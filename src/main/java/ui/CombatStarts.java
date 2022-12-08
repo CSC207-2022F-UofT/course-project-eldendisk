@@ -2,12 +2,8 @@ package ui;
 
 import java.util.Random;
 import java.util.Scanner;
-import Combat.Combat;
-import Combat.Move;
+import entities.combat.Combat;
 import entities.Character;
-import entities.Player;
-
-import javax.crypto.spec.PSource;
 
 public class CombatStarts {
     private Character player;

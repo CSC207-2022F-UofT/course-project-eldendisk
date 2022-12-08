@@ -1,8 +1,8 @@
 package entities;
-import Combat.Move;
+import entities.combat.Move;
 
-import Item.Equip;
-import Item.Item;
+import entities.item.Equip;
+import entities.item.Item;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package Combat;
+package entities.combat;
 
 import entities.Player;
 //import Player_Types.Player;

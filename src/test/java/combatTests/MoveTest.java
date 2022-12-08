@@ -1,6 +1,6 @@
-package CombatTests;
+package combatTests;
 
-import Combat.Move;
+import entities.combat.Move;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

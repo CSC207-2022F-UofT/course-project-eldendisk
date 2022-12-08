@@ -1,8 +1,8 @@
 /* This is our main class where the meat and potatoes of the program is executed */
-import Combat.Combat;
+import entities.combat.Combat;
 import ui.CombatStarts;
 import ui.EldenDisk;
-import Combat.CombatFactory;
+import entities.combat.CombatFactory;
 import entities.TempEldenDisk;
 
 import java.io.IOException;

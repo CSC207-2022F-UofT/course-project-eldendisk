@@ -1,9 +1,9 @@
-package CombatTests;
+package combatTests;
 
-import Combat.Combat;
-import Combat.BossCombat;
-import Combat.NormalCombat;
-import Combat.CombatFactory;
+import entities.combat.Combat;
+import entities.combat.BossCombat;
+import entities.combat.NormalCombat;
+import entities.combat.CombatFactory;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
-package EnemyTest;
+package enemyTest;
 
-import entities.EnemyFactory.EnemySetters;
+import entities.enemyFactory.EnemySetters;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

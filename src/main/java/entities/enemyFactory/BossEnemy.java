@@ -1,5 +1,5 @@
-package entities.EnemyFactory;
-import Combat.Move;
+package entities.enemyFactory;
+import entities.combat.Move;
 import entities.Player;
 import entities.Character;
 

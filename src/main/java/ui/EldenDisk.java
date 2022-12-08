@@ -1,6 +1,6 @@
 package ui;
 
-import entities.EnemyFactory.BossEnemy;
+import entities.enemyFactory.BossEnemy;
 
 import entities.Gunslinger;
 import entities.Mage;
