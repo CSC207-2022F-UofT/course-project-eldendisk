@@ -1,13 +1,14 @@
 package entities;
 
-
+import entities.GameStorage;
+import entities.Player;
 import ui.PlayerCreation;
 
 import java.io.IOException;
 
 public class TempEldenDisk {
     /**
-     * The Eldendisk Entity. Stores information about the player of the game, level which the player is at, and has an
+     * The EldenDisk Entity. Stores information about the player of the game, level which the player is at, and has an
      * identification number for the particular game.
      */
 
@@ -18,7 +19,7 @@ public class TempEldenDisk {
     public TempEldenDisk() throws IOException {
         this.player = (Player) PlayerCreation.CreateNewCharacter();
         this.gameLvl = 1;
-        //this.game_id = GameStorage.GetLatestId() + 1;
+        this.game_id = GameStorage.GetLastId() + 1;
     }
 
     public int getGameLvl() {return this.gameLvl; }

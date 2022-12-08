@@ -13,8 +13,8 @@ public class GameStorage {
      * Entity that stores the saved games in a csv file. Allow actions including, Add, Remove and FindGame.
      */
 
-    private static File GameList = new File("/Users/bellehuang/IdeaProjects/course-project-eldendisk/src/main/entities/GameStorage");
-
+    private static File GameList = new File("/Users/bellehuang/IdeaProjects/course-project-eldendisk/src/main/GameStorage");
+//might need to change the pathname accordingly for this class to function properly on other devices
     /**
      * @param game to be added to the GameStorage
      * @throws IOException
@@ -65,16 +65,15 @@ public class GameStorage {
      * @return id of the last saved game
      * @throws IOException
      */
-    public static int GetLatestId () throws IOException {
-        int last_id = 1;
+    public static int GetLastId () throws IOException {
         Scanner sc = new Scanner(GameList);
         while (sc.hasNext()){
-            last_id += 1;
-            sc.next();
-        }
+            sc.next();}
         String last = sc.toString();
         sc.close();
-        return last_id;
+        if (last.isEmpty()) {
+            return 1;}
+        else {return Integer.parseInt(last.split(",")[0]);}
 
     }
 }
