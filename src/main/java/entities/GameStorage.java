@@ -13,7 +13,7 @@ public class GameStorage {
      * Entity that stores the saved games in a csv file. Allow actions including, Add, Remove and FindGame.
      */
 
-    private static File GameList = new File("/Users/bellehuang/IdeaProjects/course-project-eldendisk/src/main/GameStorage");
+    private static File GameList = new File("/Users/bellehuang/IdeaProjects/course-project-eldendisk/src/main/entities/GameStorage");
 
     /**
      * @param game to be added to the GameStorage

@@ -1,7 +1,6 @@
 package entities;
 
-import entities.GameStorage;
-import entities.Player;
+
 import ui.PlayerCreation;
 
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class TempEldenDisk {
     public TempEldenDisk() throws IOException {
         this.player = (Player) PlayerCreation.CreateNewCharacter();
         this.gameLvl = 1;
-        this.game_id = GameStorage.GetLatestId() + 1;
+        //this.game_id = GameStorage.GetLatestId() + 1;
     }
 
     public int getGameLvl() {return this.gameLvl; }
