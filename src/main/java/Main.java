@@ -20,10 +20,7 @@ public class Main {
         while (gameLvl < 4) {
             Combat combat = CombatFactory.createCombat(game.getPlayer(), "Boss");
             CombatStarts.startCombat(combat);
-            if (!game.getPlayer().isDead()) {
-                gameLvl++;
-                game.getPlayer().setHP(1);
-            }
+            gameLvl++;
             System.out.println("Current Level is " + gameLvl);
 
 

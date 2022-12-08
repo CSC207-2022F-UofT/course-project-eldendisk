@@ -3,6 +3,7 @@ package ui;
 import java.util.Random;
 import java.util.Scanner;
 import Combat.Combat;
+import Combat.Move;
 import entities.Character;
 
 public class CombatStarts {
@@ -33,9 +34,9 @@ public class CombatStarts {
             //Ask first player what he wants to do;
             System.out.println(combat.getPlayer().getName() + ", it is your turn.");
             System.out.println("-------------------------------------------------------");
+            combat.getPlayer().printMoves();
             //input
             if (scanner.hasNextLine()) {
-                combat.getPlayer().printMoves();
                 String playerMove = scanner.nextLine();
 
 
@@ -43,7 +44,7 @@ public class CombatStarts {
                     System.out.println("You quit!");
                     break;
                 } else if (playerMove.equals("1") || playerMove.equals("2") || playerMove.equals("3")||playerMove.equals("4"))
-                    // (combat.getPlayer().checkMove(goodMove) after adding implementation of move in players
+
                     combat.getPlayer().attack(combat.getPlayer().pickMove(playerMove), combat.getEnemy());
                 } else {
                     System.out.println("Not a valid input, you skip your turn");
@@ -60,13 +61,14 @@ public class CombatStarts {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            selection = new Random().nextInt(4) + 1; // bound by number of moves in Moves
+            selection = 1; //new Random().nextInt(4) + 1; // bound by number of moves in Moves
 
             // remove switch, implement pick corresponding move method and enemy use attack method to attack.
             switch (selection) { // this is about the attack moves (implement moves and attack first then come back to this)
                 case 1:
-                    System.out.println("Enemy's move1");
-                    combat.getEnemy().attack(combat.getEnemy().pickMove(Integer.toString(selection)), combat.getPlayer());
+                    String selectedMove = combat.getEnemy().pickMove(Integer.toString(selection));
+                    System.out.println("Enemy's " + selectedMove);
+                    combat.getEnemy().attack(selectedMove, combat.getPlayer());
                     break;
                 case 2:
                     System.out.println("Enemy's move2");

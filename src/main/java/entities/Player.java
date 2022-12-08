@@ -22,7 +22,7 @@ public abstract class Player implements Character, Equip{
     public int max_XP = 10;
     public int player_level = 1;
 
-    public boolean player_alive = true;
+    public boolean player_alive = false;
 
     public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
 
@@ -33,7 +33,7 @@ public abstract class Player implements Character, Equip{
     public Player(String name) {
         this.name = name;
         this.damageMultiplier = 1;
-        this.money = 10;
+
         this.XP = 1;
         this.inventory = new ArrayList<>();
         this.moves = setMoves();
@@ -128,13 +128,6 @@ public abstract class Player implements Character, Equip{
         this.damageMultiplier = damageMultiplier;
     }
 
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
 
 
     public int getXP() {
