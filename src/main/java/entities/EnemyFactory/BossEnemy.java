@@ -26,7 +26,7 @@ public class BossEnemy extends Enemy {
 
     @Override
     public int setInitialEnemyHP() {
-        return 5;
+        return 20;
     }
 
     @Override
@@ -79,22 +79,22 @@ public class BossEnemy extends Enemy {
     }
 
     private boolean roar(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
-        return true;
-    }
-
-    private boolean kick(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
-        return true;
-    }
-
-    private boolean punch(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
+    private boolean kick(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(3);
+        return true;
+    }
+
+    private boolean punch(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(4);
+        return true;
+    }
+
     private boolean charge(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(0);
+        characterBeingAttacked.receiveDamage(10);
         return true;
     }
 

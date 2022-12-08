@@ -35,8 +35,8 @@ public abstract class Player implements Character, Equip{
     public Player(String name) {
         this.name = name;
 
-        this.HP = 5;
-        this.max_XP = 5;
+        this.HP = 9;
+        this.max_HP = 9;
         this.damageMultiplier = 1;
 
         this.XP = 0;
@@ -70,7 +70,7 @@ public abstract class Player implements Character, Equip{
 
     @Override
     public boolean isDead() {
-        return this.player_alive;
+        return getHP() <= 0;
     }
 
     @Override
@@ -151,8 +151,8 @@ public abstract class Player implements Character, Equip{
         this.player_level += 1;
         setXP(get_XP() - getMax_XP());
         setMaxXP(getMax_XP() + 2);
-        setCharacterMaxHP(getCharacterMaxHP() + 1);
-        setCharacterMaxHP(getCharacterMaxHP());
+        setCharacterMaxHP(getCharacterMaxHP() + 3);
+        setCharacterHP(getCharacterMaxHP());
     }
 
 

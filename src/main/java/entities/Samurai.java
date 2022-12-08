@@ -51,17 +51,19 @@ public class Samurai extends Player{
     }
 
     private boolean seppuku(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(3);
         return true;
     }
 
     private boolean stormBlade(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
     private boolean bloodyStash(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(2);
         return true;
     }
 

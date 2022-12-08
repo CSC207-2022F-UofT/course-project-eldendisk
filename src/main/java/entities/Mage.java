@@ -53,17 +53,17 @@ public class Mage extends Player{
     }
 
     private boolean flameOfTheFellGod(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
     private boolean cometAzur(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(5);
         return true;
     }
 
     private boolean startsOfRuins(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(8);
         return true;
     }
 

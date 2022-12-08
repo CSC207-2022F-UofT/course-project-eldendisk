@@ -37,6 +37,15 @@ public class CombatStarts {
             e.printStackTrace();
         }
 
+        System.out.println("You encountered a new Enemy...");
+        System.out.println("");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("");
         System.out.println(combat.getPlayer().getName() + " VS "
                 + combat.getEnemy().getName());
         System.out.println("");
@@ -51,7 +60,9 @@ public class CombatStarts {
         while (!combat.getEnemy().isDead() && !combat.getPlayer().isDead()) {
             //Ask first player what he wants to do;
             System.out.println(combat.getPlayer().getName() + ", it is your turn.");
+            System.out.println("You have " + combat.getPlayer().getHP() + " HP now...");
             System.out.println("-------------------------------------------------------");
+            System.out.println("Give us your move...");
             combat.getPlayer().printMoves();
             //input
             if (scanner.hasNextLine()) {
@@ -105,15 +116,17 @@ public class CombatStarts {
 
         }
 
+
         // result UI
 
         if (combat.getEnemy().isDead()) {
             System.out.println(combat.getEnemy().getName() + " has died! You won!");
             System.out.println("");
-            combat.getPlayer().add_XP(4);
+            combat.getPlayer().add_XP(2);
             while (combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()){
                 combat.getPlayer().level_up();
                 System.out.println("Congratulation! You have leveled up! You are now level " + combat.getPlayer().getPlayer_level() +"!");
+                System.out.println("");
             }
 
         }

@@ -18,13 +18,44 @@ public class Main {
 
 
         TempEldenDisk game = new TempEldenDisk();
-        int gameLvl = 1;
-        while (gameLvl < 4) {
+
+        while (game.getGameLvl() < 4) {
             Combat combat = CombatFactory.createCombat(game.getPlayer(), "Boss");
             CombatStarts.startCombat(combat);
-            gameLvl++;
-            if (gameLvl < 4) {
-                System.out.println("Current Level is " + gameLvl);
+
+            // depending on the result (player alive = victory / player dead = defeat),
+            // game level increase or player gets recovery.
+            if (!game.getPlayer().isDead()) {
+                game.increaseGameLvl();
+            } else {
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("...");
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("...");
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                game.getPlayer().setCharacterHP(game.getPlayer().getCharacterMaxHP());
+                System.out.println("You are recovered.");
+                System.out.println("");
+            }
+
+            if (game.getGameLvl() < 4) {
+                System.out.println("Current Game Level is " + game.getGameLvl());
                 System.out.println("");
             }
         }
