@@ -19,7 +19,7 @@ public class TempEldenDisk {
     public TempEldenDisk() throws IOException {
         this.player = (Player) PlayerCreation.CreateNewCharacter();
         this.gameLvl = 1;
-        this.game_id = GameStorage.GetLastId() + 1;
+//        this.game_id = GameStorage.GetLastId() + 1;
     }
 
     public int getGameLvl() {return this.gameLvl; }

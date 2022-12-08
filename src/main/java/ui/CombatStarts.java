@@ -127,7 +127,7 @@ public class CombatStarts {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Prepare for the next combat...");
+        System.out.println("Prepare for the next battle...");
         System.out.println("");
         try {
             Thread.sleep(2000);
