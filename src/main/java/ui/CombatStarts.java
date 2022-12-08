@@ -111,7 +111,7 @@ public class CombatStarts {
             combat.getPlayer().add_XP();
             if(combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()){
                 combat.getPlayer().level_up();
-                System.out.println("Congratulation! You have leveled up! You are now level " + combat.getPlayer().getPlayer_level() +" !");
+                System.out.println("Congratulation! You have leveled up! You are now level " + combat.getPlayer().getPlayer_level() +"!");
             }
 
         }
