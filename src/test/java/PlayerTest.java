@@ -18,7 +18,7 @@ public class PlayerTest {
     public void testSetName() {
         Player p1 = new Player("Keren", 50, 10, 1, 20, 500,
                 null, 100, 2);
-        String newName = "Keren";
+                String newName = "Keren";
         p1.setName(newName);
 
         // assertion
