@@ -25,7 +25,7 @@ public class Main {
 
             // depending on the result (player alive = victory / player dead = defeat),
             // game level increase or player gets recovery.
-            if (!game.getPlayer().isDead()) {
+            if (combat.getEnemy().isDead()) {
                 game.increaseGameLvl();
             } else {
 
