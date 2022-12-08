@@ -32,8 +32,8 @@ public class Main {
         System.out.println("Congratulation! You won the game!");
 
 
-//        EldenDisk.EndGameDialogue();
-//        EldenDisk.LargeText("THE END");
+        EldenDisk.EndGameDialogue();
+        EldenDisk.LargeText("THE END");
 
 }
 }
