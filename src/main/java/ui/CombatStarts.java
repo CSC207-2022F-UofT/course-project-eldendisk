@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Combat.Combat;
 import Combat.Move;
 import entities.Character;
+import entities.Player;
 
 import javax.crypto.spec.PSource;
 
@@ -104,10 +105,17 @@ public class CombatStarts {
 
         }
 
-        // result
+        // result UI
+
         if (combat.getEnemy().isDead()) {
             System.out.println(combat.getEnemy().getName() + " has died! You won!");
             System.out.println("");
+            combat.getPlayer().add_XP(4);
+            while (combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()){
+                combat.getPlayer().level_up();
+                System.out.println("Congratulation! You have leveled up! You are now level " + combat.getPlayer().getPlayer_level() +"!");
+            }
+
         }
 
         if (combat.getPlayer().isDead()) {

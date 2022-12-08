@@ -98,5 +98,4 @@ public class BossEnemy extends Enemy {
         return true;
     }
 
-
 }

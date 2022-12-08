@@ -5,15 +5,15 @@ import entities.Player;
 import entities.Character;
 
 public class Combat {
-    private Character player;
+    private Player player;
     private Character enemy;
 
     public Combat(Player player, String combatType) {
-        this.player = (Character)player;
-        this.enemy = (Character) EnemyFactory.createEnemy((Player)player, combatType);
+        this.player = player;
+        this.enemy = EnemyFactory.createEnemy(player, combatType);
     }
     //    public Scanner getScanner() {return this.scanner;}
-    public Character getPlayer() {
+    public Player getPlayer() {
         return player;
     }
     public Character getEnemy() {
