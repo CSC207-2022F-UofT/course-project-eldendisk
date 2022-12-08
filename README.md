@@ -4,4 +4,4 @@ Elden Disk is a text based single player game where the player has to beat a ser
 
 # How to run
 
-Copy code URL and create a new project from VCS. Then run the main file as is. (Must be running JKD coretto 17 in order for the game to function properly)
+Copy code URL and create a new project from VCS. Then run the main file as is. (Grade JVM must be openjdk-19 for the game to run properly)
