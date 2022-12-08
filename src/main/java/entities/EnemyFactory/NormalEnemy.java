@@ -60,15 +60,4 @@ public class NormalEnemy extends Enemy {
     }
 
 
-    @Override
-    public void level_up(){
-    }
-
-    public void add_XP(){}
-    public int getMax_XP(){return 1;}
-    public int get_XP(){return 1;}
-    public int getPlayer_level(){return 1;}
-    public void dies(){}
-
-
 }

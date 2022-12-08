@@ -27,19 +27,6 @@ public interface Character {
     public ArrayList<Move> getMoves();
 
 
-    public int getMax_XP();
-    public int get_XP();
-    public int getPlayer_level();
-
-    public void dies();
-
-
-    // Should we make an XP calculation method to give player different XP everytime?
-
-    public void add_XP();
-
-    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.
-    public void level_up();
 
 
 }
