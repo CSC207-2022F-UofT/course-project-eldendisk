@@ -1,14 +1,12 @@
 package useCases;
-import entities.Game;
 import entities.GameStorage;
 import java.io.IOException;
 
-public class SaveGame implements SaveGameGateway {
-import entities.Player;
-
-import java.io.IOException;
+import entities.TempEldenDisk;
 
 public class SaveGame {
+
+
     /**
      * The Use Case responsible for saving the Game to GameStorage.
      *
@@ -17,25 +15,10 @@ public class SaveGame {
      * @throws IOException
      */
 
-    public static boolean save(Game game) throws IOException {
-        GameStorage.Add(GetInfo(game));
+    public static boolean save(TempEldenDisk game) throws IOException {
+        GameStorage.Add(GetInfo.getInfo(game));
         return true;
     }
 
-    @Override
-    public String GetInfo(Game game) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(game.GetId() + ",");
-//        sb.append()
-        sb.append(game.GetLevel() + ",");
-    public static String GetInfo(Game game) {
-        Player p = game.GetPlayer();
-        StringBuilder sb = new StringBuilder();
-        sb.append(game.GetId() + ",");
-        sb.append(game.GetLevel() + ",");
-        sb.append(p.player_level + p.name + p.damageMultiplier + p.HP + p.XP);
-        return sb.toString();
-    }
 
     }
-

@@ -86,7 +86,7 @@ public class EldenDisk {
         System.out.println("IT IS TIMED TO FIGHT OH WEARY TARNISHED");
         Scanner scanner = new Scanner(System.in);
 
-        while (user.HP > 0 & this.getEnemy().enemy_alive) {
+        while (user.HP > 0 & this.getEnemy().isDead()) {
             System.out.println(this.player_name + ", it is your turn");
             CharacterChoice(user);
             if (scanner.hasNextLine()) {
@@ -112,8 +112,8 @@ public class EldenDisk {
         if (user.HP > 0) {
             System.out.println("You have died!");
         }
-        if (!this.getEnemy().enemy_alive) {
-            System.out.println(this.getEnemy().getEnemyName() + " have died. You won!");
+        if (!this.getEnemy().isDead()) {
+            System.out.println(this.getEnemy().getName() + " have died. You won!");
         }
 
     }

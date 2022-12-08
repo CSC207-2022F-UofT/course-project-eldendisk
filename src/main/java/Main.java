@@ -3,12 +3,14 @@ import Combat.Combat;
 import ui.CombatStarts;
 import ui.EldenDisk;
 import Combat.CombatFactory;
-import ui.TempEldenDisk;
+import entities.TempEldenDisk;
+
+import java.io.IOException;
 
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        BossEnemy boss1 = new BossEnemy("player", "boss_one");
 
@@ -16,20 +18,53 @@ public class Main {
 
 
         TempEldenDisk game = new TempEldenDisk();
-        int gameLvl = 1;
-        while (gameLvl < 4) {
+
+        while (game.getGameLvl() < 4) {
             Combat combat = CombatFactory.createCombat(game.getPlayer(), "Boss");
             CombatStarts.startCombat(combat);
-            if (!game.getPlayer().isDead()) {
-                gameLvl++;
-                game.getPlayer().setHP(1);
+
+            // depending on the result (player alive = victory / player dead = defeat),
+            // game level increase or player gets recovery.
+            if (combat.getEnemy().isDead()) {
+                game.increaseGameLvl();
+            } else {
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("...");
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("...");
+
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                game.getPlayer().setCharacterHP(game.getPlayer().getCharacterMaxHP());
+                System.out.println("You are recovered.");
+                System.out.println("");
             }
-            System.out.println("Current Level is " + gameLvl);
 
-
-//        EldenDisk.EndGameDialogue();
-//        EldenDisk.LargeText("THE END");
-
+            if (game.getGameLvl() < 4) {
+                System.out.println("Current Game Level is " + game.getGameLvl());
+                System.out.println("");
+            }
         }
+
+        System.out.println("Congratulation! You won the game!");
+
+
+        EldenDisk.EndGameDialogue();
+        EldenDisk.LargeText("THE END");
+
 }
 }

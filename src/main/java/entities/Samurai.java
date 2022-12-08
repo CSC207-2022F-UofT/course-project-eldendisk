@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Samurai extends Player{
     /* This class creates the Samurai class. The values of the class will be changed depending on the
      * enemy the player encounters*/
-    //TODO implement combat methods
 
     public Samurai(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
@@ -52,23 +51,26 @@ public class Samurai extends Player{
     }
 
     private boolean seppuku(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(3);
         return true;
     }
 
     private boolean stormBlade(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
-        return true;
-    }
-
-    private boolean bloodyStash(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(1);
         characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
-    private boolean execution(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(0);
+    private boolean bloodyStash(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(2);
         return true;
     }
+
+    private boolean execution(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(10);
+        return true;
+    }
+
 
 }

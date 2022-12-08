@@ -26,4 +26,7 @@ public interface Character {
     public ArrayList<Move> setMoves();
     public ArrayList<Move> getMoves();
 
+
+
+
 }

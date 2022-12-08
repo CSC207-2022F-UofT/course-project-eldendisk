@@ -12,19 +12,21 @@ public abstract class Player implements Character, Equip{
 
     /* This class initializes all the general player stats and creates the player object,
     * constructor, getters, setters, and other respective methods.*/
-    public String name = "";
-    public int HP = 100;
-    public int attackDamage = 10;
-    public int damageMultiplier = 0;
-    public int money = 0;
+    public String name;
+    public int HP;
+    private int max_HP;
+    public int attackDamage;
+    public double damageMultiplier;
+
     public int XP = 0;
-    //Should we increment the max_XP as the player levels up?
-    public int max_XP = 10;
+
+    public int max_XP = 2;
+
     public int player_level = 1;
 
-    public boolean player_alive = true;
+    public boolean player_alive = false;
 
-    public ArrayList<Object> inventory = new ArrayList<Object>(); //Object will be replaced by item
+    public ArrayList<Object> inventory; // = new ArrayList<Object>(); //Object will be replaced by item
 
     public ArrayList<Move> moves;
 
@@ -32,9 +34,13 @@ public abstract class Player implements Character, Equip{
 
     public Player(String name) {
         this.name = name;
+
+        this.HP = 9;
+        this.max_HP = 9;
         this.damageMultiplier = 1;
-        this.money = 10;
-        this.XP = 1;
+
+        this.XP = 0;
+        this.max_XP = 2;
         this.inventory = new ArrayList<>();
         this.moves = setMoves();
     }
@@ -52,6 +58,10 @@ public abstract class Player implements Character, Equip{
         this.HP = HP;
     }
 
+    public void setCharacterMaxHP(int HP) {this.max_HP = HP;}
+
+    public int getCharacterMaxHP() {return this.max_HP;}
+
 
     @Override
     public void changeHP(int change) {
@@ -60,7 +70,7 @@ public abstract class Player implements Character, Equip{
 
     @Override
     public boolean isDead() {
-        return this.player_alive;
+        return getHP() <= 0;
     }
 
     @Override
@@ -84,15 +94,6 @@ public abstract class Player implements Character, Equip{
 
 
 
-
-    public void increaseMoney(int numberToIncrease){
-        this.money = this.money + numberToIncrease;
-    }
-
-    public void decreaseMoney(int numberToDecrease){
-        this.money = this.money + numberToDecrease;
-    }
-
     @Override
 
     public String getName() {
@@ -108,9 +109,14 @@ public abstract class Player implements Character, Equip{
         return HP;
     }
 
-    public void setHP(int HP) {
-        this.HP = HP;
+    @Override
+    public void setHP(int HP) {this.HP = HP;}
+
+    public void setDamageMultiplier(double damageMultiplier) {
+        this.damageMultiplier = damageMultiplier;
     }
+
+    public double getDamageMultiplier() {return this.damageMultiplier;}
 
     public int getAttackDamage() {
         return attackDamage;
@@ -120,47 +126,33 @@ public abstract class Player implements Character, Equip{
         this.attackDamage = attackDamage;
     }
 
-    public int getDamageMultiplier() {
-        return damageMultiplier;
-    }
-
-    public void setDamageMultiplier(int damageMultiplier) {
-        this.damageMultiplier = damageMultiplier;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
 
 
-    public int getXP() {
-        return XP;
-    }
+    // XP System - Player's XP and max_XP values to determine whether player had leveled up.
+    // As Player levels up, player gain 1 extra max HP and heals its HP.
 
-    public Object setXP(int XP) {
+    public void setXP(int XP) {
         this.XP = XP;
-        return null;
     }
 
+    public void setMaxXP(int XP) {
+        this.max_XP = XP;
+    }
+    public int get_XP(){return this.XP;}
 
     public int getMax_XP(){return this.max_XP;}
+
     public int getPlayer_level(){return this.player_level;}
 
-    public void dies(){
-        this.player_alive = false;
-    }
+    public void add_XP(int obtainedXP){this.XP += obtainedXP;}
 
-    // Should we make an XP calculation method to give player different XP everytime?
-    public void add_XP(){this.XP += 5;}
-
-    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.
+    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.f
     public void level_up(){
-        this.level_up();
-        this.XP = 0;
+        this.player_level += 1;
+        setXP(get_XP() - getMax_XP());
+        setMaxXP(getMax_XP() + 2);
+        setCharacterMaxHP(getCharacterMaxHP() + 3);
+        setCharacterHP(getCharacterMaxHP());
     }
 
 

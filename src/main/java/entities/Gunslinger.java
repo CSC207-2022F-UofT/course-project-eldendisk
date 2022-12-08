@@ -52,12 +52,12 @@ public class Gunslinger extends Player {
     }
 
     private boolean gogoGlock(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
     private boolean gunfu(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
@@ -67,8 +67,9 @@ public class Gunslinger extends Player {
     }
 
     private boolean execution(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(0);
+        characterBeingAttacked.receiveDamage(10);
         return true;
     }
+
 
 }
