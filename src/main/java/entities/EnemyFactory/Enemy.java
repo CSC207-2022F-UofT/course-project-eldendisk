@@ -79,8 +79,8 @@ public abstract class Enemy implements Character {
 
 
     @Override
-    public String pickMove(String selectoin) {
-        return null;
+    public String pickMove(String selection) {
+        return getMoves().get(Integer.valueOf(selection) - 1).toString();
     }
 
     @Override

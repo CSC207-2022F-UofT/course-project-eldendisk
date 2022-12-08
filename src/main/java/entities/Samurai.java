@@ -67,7 +67,7 @@ public class Samurai extends Player{
     }
 
     private boolean execution(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(0);
+        characterBeingAttacked.receiveDamage(10);
         return true;
     }
 
