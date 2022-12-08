@@ -32,8 +32,8 @@ public class EldenDisk {
         System.out.println(
                 "Elden Disk is a text based single player game you have to beat a series of ten bosses to win.\s"
                 +"You will be able to chose three classes, all of which have their individual pros and cons based on what type of enemy you are facing.\s"
-                +"On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself."
-                +"Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up."
+                +"On your turn, you will be able to either attack the enemy, use an item that will be purchasable through an in game trader, or purchase an item itself.\s"
+                +"Once you use your the enemy will attack. After the battle you will receive experience and currency to be able to purchase items and level up.\s"
                 +"Only when you beat all the bosses, will you be declared the Elden Prince.\s");
         System.out.println("-------------------------------------------------------");
         System.out.println("Type quit to exit at anytime.");
@@ -138,10 +138,10 @@ public class EldenDisk {
     public static void EndGameDialogue() {
         System.out.println("-------------------------------------------------------");
         System.out.println(
-                "The fallen leaves tell a story\\s"
-                                +"Of how a Tarnished became Elden Prince\\s"
-                                +"In our home, across the fog, the Lands Between.\\s"
-                                +"Our seed will look back upon us and recall\\s"
+                "The fallen leaves tell a story\s"
+                                +"Of how a Tarnished became Elden Prince\s"
+                                +"In our home, across the fog, the Lands Between.\s"
+                                +"Our seed will look back upon us and recall\s"
                                 +"The Age of the Elden Prince");
         System.out.println("-------------------------------------------------------");
         LargeText("THE END");
