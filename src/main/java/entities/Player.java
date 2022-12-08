@@ -19,7 +19,8 @@ public abstract class Player implements Character, Equip{
     public int money = 0;
     public int XP = 0;
     //Should we increment the max_XP as the player levels up?
-    public int max_XP = 10;
+    public int max_XP = 2;
+
     public int player_level = 1;
 
     public boolean player_alive = false;
@@ -139,20 +140,23 @@ public abstract class Player implements Character, Equip{
         return null;
     }
 
-
+    @Override
     public int getMax_XP(){return this.max_XP;}
+    public int get_XP(){return this.XP;}
     public int getPlayer_level(){return this.player_level;}
 
     public void dies(){
         this.player_alive = false;
     }
 
-    // Should we make an XP calculation method to give player different XP everytime?
-    public void add_XP(){this.XP += 5;}
 
-    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.
+    // Should we make an XP calculation method to give player different XP everytime?
+
+    public void add_XP(){this.XP += 2;}
+
+    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.f
     public void level_up(){
-        this.level_up();
+        this.player_level += 1;
         this.XP = 0;
     }
 

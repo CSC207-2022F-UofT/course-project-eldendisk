@@ -72,4 +72,6 @@ public class Mage extends Player{
         return true;
     }
 
+
+
 }
