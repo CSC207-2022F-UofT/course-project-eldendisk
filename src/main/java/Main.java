@@ -29,17 +29,17 @@ public class Main {
             // Otherwise, mini monster appears.
             switch (game.getGameLvl()) {
                 case 1:
-                    if (game.getPlayer().getPlayer_level() >= 3) {
+                    if (game.getPlayer().getPlayerLevel() >= 3) {
                         combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
                         break;
                     }
                 case 2:
-                    if (game.getPlayer().getPlayer_level() >= 6) {
+                    if (game.getPlayer().getPlayerLevel() >= 6) {
                         combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
                         break;
                     }
                 case 3:
-                    if (game.getPlayer().getPlayer_level() >= 9) {
+                    if (game.getPlayer().getPlayerLevel() >= 9) {
                         combat = CombatFactory.createCombat(game.getPlayer(), "Boss", game.getGameLvl());
                         break;
                     }

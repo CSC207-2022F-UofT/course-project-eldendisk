@@ -66,10 +66,10 @@ public class CombatUseCase implements CombatInterface {
 
         if (combat.getEnemy().isDead()) {
             presenter.displayCombatWin(combat.getEnemy().getName());
-            combat.getPlayer().add_XP(10);
-            while (combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()) {
+            combat.getPlayer().add_XP(2);
+            while (combat.getPlayer().getXP() >= combat.getPlayer().getMaxXP()) {
                 combat.getPlayer().level_up();
-                presenter.displayLevelUp(combat.getPlayer().getPlayer_level());
+                presenter.displayLevelUp(combat.getPlayer().getPlayerLevel());
             }
         }
 

@@ -8,60 +8,54 @@ import entities.player.Character;
 import java.util.ArrayList;
 
 public abstract class Player implements Character, Equip{
-
-    //TODO implement interface for combat, death, and any other things that each player would do.
-
     /* This class initializes all the general player stats and creates the player object,
     * constructor, getters, setters, and other respective methods.*/
     public String name;
     public int HP;
     private int max_HP;
     public int attackDamage;
-    public double damageMultiplier;
-
-    public int XP = 0;
-
-    public int max_XP = 2;
-
-    public int player_level = 1;
-
-    public boolean player_alive = false;
-
-    public ArrayList<Object> inventory; // = new ArrayList<Object>(); //Object will be replaced by item
+    public int damageMultiplier;
+    public int XP;
+    public int max_XP;
+    public int player_level;
+    public ArrayList<Object> inventory;
 
     public ArrayList<Move> moves;
 
 
 
     public Player(String name) {
+        // When Player is created with its name, it has the following initial attributes.
         this.name = name;
 
         this.HP = 9;
         this.max_HP = 9;
+        this.attackDamage = 1;
         this.damageMultiplier = 1;
 
+        this.player_level = 1;
         this.XP = 0;
         this.max_XP = 2;
+
         this.inventory = new ArrayList<>();
         this.moves = setMoves();
     }
+
     // following methods are the methods in Character interface.
     @Override
     public abstract boolean attack(String move, Character characterBeingAttacked);
+    // this methods need to be implemented differently among different player classes.
 
     @Override
     public void receiveDamage(int damage) {
+        // use changeHP to apply the damage received.
         changeHP(damage);
     }
 
-    @Override
-    public void setCharacterHP(int HP) {
-        this.HP = HP;
-    }
+    // Extra MaxHP attributes of Player class.
+    public void setMaxHP(int HP) {this.max_HP = HP;}
 
-    public void setCharacterMaxHP(int HP) {this.max_HP = HP;}
-
-    public int getCharacterMaxHP() {return this.max_HP;}
+    public int getMaxHP() {return this.max_HP;}
 
 
     @Override
@@ -74,28 +68,37 @@ public abstract class Player implements Character, Equip{
         return getHP() <= 0;
     }
 
+
+    // Move related methods from Character interface override.
     @Override
     public String pickMove(String selection) {
-        // pre condition : selection is either 1, 2, 3, 4
-        return getMoves().get(Integer.valueOf(selection) - 1).toString();
+        // returns a String representation of selected Move using player's selection of move.
+        // pre-condition : selection is either 1, 2, 3, 4
+        return getMoves().get(Integer.parseInt(selection) - 1).toString();
     }
 
     @Override
     public abstract ArrayList<Move> setMoves();
     // this sets character's moves according to its class (or type)
+    // need to be implemented differently among different player classes.
+
     @Override
     public ArrayList<Move> getMoves() {return this.moves;}
 
     public void printMoves()  {
+        // Displays the moves of Player in the following format:
+        // 1 : "move name1"
+        // 2 : "move name2" ...
         for (int i = 0 ; i < 4 ; i++) {
             System.out.println((i+1) + " : " + getMoves().get(i).toString());
         }
     }
 
-    @Override
 
+    // More getter and setter methods
+    @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -104,20 +107,20 @@ public abstract class Player implements Character, Equip{
 
     @Override
     public int getHP() {
-        return HP;
+        return this.HP;
     }
 
     @Override
     public void setHP(int HP) {this.HP = HP;}
 
-    public void setDamageMultiplier(double damageMultiplier) {
+    public void setDamageMultiplier(int damageMultiplier) {
         this.damageMultiplier = damageMultiplier;
     }
 
-    public double getDamageMultiplier() {return this.damageMultiplier;}
+    public int getDamageMultiplier() {return this.damageMultiplier;}
 
     public int getAttackDamage() {
-        return attackDamage;
+        return this.attackDamage;
     }
 
     public void setAttackDamage(int attackDamage) {
@@ -127,33 +130,47 @@ public abstract class Player implements Character, Equip{
 
 
     // XP System - Player's XP and max_XP values to determine whether player had leveled up.
-    // As Player levels up, player gain 1 extra max HP and heals its HP.
+    // When Player's current xp exceeds its MaxpXP, it levels up and gains 3 extra max HP and heals its HP.
+    // Moreover, Player's XP reduces by current MaxXP and then its MaxXP increase by 2.
+    // For the variety, Player's attackDamage increase by 1 for every level up.
+
+    // setter methods (Level related values)
 
     public void setXP(int XP) {
         this.XP = XP;
     }
+    public void setPlayer_level(int level) {this.player_level = level;}
 
     public void setMaxXP(int XP) {
         this.max_XP = XP;
     }
-    public int get_XP(){return this.XP;}
 
-    public int getMax_XP(){return this.max_XP;}
+    // getter methods (Level related values)
+    public int getXP(){return this.XP;}
 
-    public int getPlayer_level(){return this.player_level;}
+    public int getMaxXP(){return this.max_XP;}
 
-    public void add_XP(int obtainedXP){this.XP += obtainedXP;}
+    public int getPlayerLevel(){return this.player_level;}
 
-    // This is used in the EldenDisk file. Condition: method is called when XP exceeds max_XP.f
-    public void level_up(){
-        this.player_level += 1;
-        setXP(get_XP() - getMax_XP());
-        setMaxXP(getMax_XP() + 2);
-        setCharacterMaxHP(getCharacterMaxHP() + 3);
-        setCharacterHP(getCharacterMaxHP());
+    public void add_XP(int obtainedXP){
+        // new XP is set to a value of (current XP + obtainedXP)
+        setXP(obtainedXP + getXP());
     }
 
+    public void level_up(){
+        // PreCondition: Player's XP >= max_XP
+        // level increase by 1, current XP decreases by max_XP and max_XP increase by 2.
+        // max_HP increase by 3 and HP is set to new max_XP(heal)
+        // Also, attackDamage increase by 1
+        setPlayer_level(getPlayerLevel() + 1);
+        setXP(getXP() - getMaxXP());
+        setMaxXP(getMaxXP() + 2);
+        setMaxHP(getMaxHP() + 3);
+        setHP(getMaxHP());
+        setAttackDamage(getAttackDamage() + 1);
+    }
 
+    // Equipment System - Not included function.
     public void equipItem(Item item){
         this.HP += item.defend_pwr;
         this.attackDamage += item.attack_pwr;

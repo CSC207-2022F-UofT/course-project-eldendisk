@@ -20,6 +20,6 @@ public class PlayerTest {
         int newXP = 500;
         p2.setXP(newXP);
 
-        Assertions.assertEquals(newXP, p2.get_XP());
+        Assertions.assertEquals(newXP, p2.getXP());
     }
 }
