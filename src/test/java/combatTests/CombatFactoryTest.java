@@ -6,29 +6,17 @@ import entities.combat.NormalCombat;
 import entities.combat.CombatFactory;
 import entities.player.Player;
 import entities.player.Mage;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class CombatFactoryTest {
-    //
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
     @Test
-    public void testCreateCombat() {
+    public void TestCreateCombat() {
         Player mage = new Mage("nathan", 1, 1, 1, 1, 1, 1, 1);
         Combat boss = CombatFactory.createCombat(mage, "Boss", 1);
-        assertTrue(boss instanceof BossCombat);
+        Assertions.assertTrue(boss instanceof BossCombat);
 
         Combat normal = CombatFactory.createCombat(mage, "Normal", 1);
-        assertTrue(normal instanceof NormalCombat);
+        Assertions.assertTrue(normal instanceof NormalCombat);
     }
 }
