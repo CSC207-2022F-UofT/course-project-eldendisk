@@ -3,6 +3,7 @@ package useCases;
 import java.util.Random;
 
 import entities.combat.Combat;
+import entities.enemyFactory.BossEnemy;
 import presenters.CombatPresenter;
 
 public class CombatUseCase implements CombatInterface {
@@ -67,6 +68,11 @@ public class CombatUseCase implements CombatInterface {
         if (combat.getEnemy().isDead()) {
             presenter.displayCombatWin(combat.getEnemy().getName());
             combat.getPlayer().add_XP(2);
+
+            if (combat.getEnemy() instanceof BossEnemy) {
+                combat.getPlayer().add_XP(8);
+            }
+
             while (combat.getPlayer().getXP() >= combat.getPlayer().getMaxXP()) {
                 combat.getPlayer().level_up();
                 presenter.displayLevelUp(combat.getPlayer().getPlayerLevel());
