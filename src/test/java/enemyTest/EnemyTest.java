@@ -24,7 +24,6 @@ public class EnemyTest {
         e1.setEnemyName(newName);
 
         assertEquals("the Enemy's name variable should have been set to \"Keren\"!", newName, e1.toString());
-
     }
 
     @Test (timeout = 500)

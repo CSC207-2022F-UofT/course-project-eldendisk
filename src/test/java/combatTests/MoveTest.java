@@ -20,7 +20,7 @@ public class MoveTest {
     @Test
     public void testToString() {
         Move move = new Move("attack", 10, 2, "enemy");
-        assertEquals("attack : 10 / x 2 to enemy", move.toString());
+        assertEquals("attack", move.toString());
     }
 
     @Test
