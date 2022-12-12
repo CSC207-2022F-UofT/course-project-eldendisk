@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class TestTempEldenDisk {
+public class TempEldenDiskTest {
     @Test
     public void TestLvlMethods() throws IOException {
         TempEldenDisk t = new TempEldenDisk();
