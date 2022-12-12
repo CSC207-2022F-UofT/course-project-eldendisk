@@ -1,74 +1,62 @@
 package enemyTest;
 
 import entities.enemyFactory.EnemySetters;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class EnemyTest {
-
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
-    @Test(timeout = 500)
-    public void testSetEnemyName() {
+    @Test
+    public void TestSetEnemyName() {
         EnemySetters e1 = new EnemySetters();
         String newName = "Keren";
         e1.setEnemyName(newName);
 
-        assertEquals("the Enemy's name variable should have been set to \"Keren\"!", newName, e1.toString());
-
+        Assertions.assertEquals(newName, e1.getEnemyName());
     }
 
-    @Test (timeout = 500)
-    public void testSetEnemyHP() {
+    @Test
+    public void TestSetEnemyHP() {
         EnemySetters e2 = new EnemySetters();
         int newHP = 10;
         e2.setEnemyHP(newHP);
 
-        assertEquals("the Enemy's HP variable should have been set to 10!", newHP, e2.setEnemyHP(newHP));
+        Assertions.assertEquals(newHP, e2.getEnemyHP());
     }
 
-    @Test (timeout = 500)
-    public void testSetEnemyStats() {
+    @Test
+    public void TestSetEnemyStats() {
         EnemySetters e3 = new EnemySetters();
         int newStats = 100;
         e3.setEnemyStats(newStats);
 
-        assertEquals("the Enemy's Stats variable should have been set to 100!", newStats, e3.setEnemyHP(newStats));
+        Assertions.assertEquals(newStats, e3.getEnemyStats());
     }
 
-    @Test (timeout = 500)
-    public void testSetEnemyAttackDmg() {
+    @Test
+    public void TestSetEnemyAttackDmg() {
         EnemySetters e4 = new EnemySetters();
         int AttackDmg = 15;
         e4.setEnemyAttackDmg(AttackDmg);
 
-        assertEquals("the Enemy's Attack Damage variable should have been set to 100!", AttackDmg, e4.setEnemyHP(AttackDmg));
+        Assertions.assertEquals(AttackDmg, e4.getEnemyAttackDmg());
     }
 
-    @Test (timeout = 500)
-    public void testSetEnemyDmgMultiplier() {
+    @Test
+    public void TestSetEnemyDmgMultiplier() {
         EnemySetters e5 = new EnemySetters();
         double DmgMultiplier = 1.5;
         e5.setEnemyDmgMultiplier(DmgMultiplier);
 
-        assertEquals("the Enemy's Damage Multiplier variable should have been set to 100!", DmgMultiplier, e5.setEnemyHP((int) DmgMultiplier));
+        Assertions.assertEquals(DmgMultiplier, e5.getEnemyDmgMultiplier());
     }
 
-    @Test (timeout = 500)
+    @Test
     public void testSetEnemyType() {
         EnemySetters e6 = new EnemySetters();
         String EnemyType = "Boss";
         e6.setEnemyType(EnemyType);
 
-        assertEquals("the Enemy's Type variable should have been set to \"Boss\"!", EnemyType, e6.toString());
+        Assertions.assertEquals(EnemyType, e6.getEnemyType());
     }
 }

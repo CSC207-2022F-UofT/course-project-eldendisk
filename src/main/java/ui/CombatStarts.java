@@ -14,10 +14,6 @@ public class CombatStarts {
         combatController.startCombat();
     }
 
-    public static boolean hasInput() {
-        return scanner.hasNextLine();
-    }
-
     public static String getInput() {
         return scanner.nextLine();
     }

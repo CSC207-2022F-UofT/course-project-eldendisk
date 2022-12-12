@@ -1,53 +1,41 @@
 package combatTests;
 
 import entities.combat.Move;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class MoveTest {
-    //
-    @Before
-    public void setUp() {
-    }
-
-    @After
-    public void tearDown() {
-    }
-
     @Test
-    public void testToString() {
+    public void TestToString() {
         Move move = new Move("attack", 10, 2, "enemy");
-        assertEquals("attack : 10 / x 2 to enemy", move.toString());
+        Assertions.assertEquals("attack", move.toString());
     }
 
     @Test
-    public void testSetMoveName() {
+    public void TestSetMoveName() {
         Move move = new Move("a", 1, 2, "enemy");
         move.setMoveName("b");
-        assertEquals("b", move.getMoveName());
+        Assertions.assertEquals("b", move.getMoveName());
     }
 
     @Test
-    public void testSetMoveDamage() {
+    public void TestSetMoveDamage() {
         Move move = new Move("a", 1, 2, "enemy");
         move.setMoveDamage(2);
-        assertEquals(2, move.getMoveDamage());
+        Assertions.assertEquals(2, move.getMoveDamage());
     }
 
     @Test
-    public void testSetMoveMultiplier() {
+    public void TestSetMoveMultiplier() {
         Move move = new Move("a", 1, 2, "enemy");
         move.setMoveMultiplier(3);
-        assertEquals(3, move.getMoveMultiplier());
+        Assertions.assertEquals(3, move.getMoveMultiplier());
     }
 
     @Test
-    public void testSetMoveTarget() {
+    public void TestSetMoveTarget() {
         Move move = new Move("a", 1, 2, "enemy");
         move.setMoveTarget("enemy2");
-        assertEquals("enemy2", move.getMoveTarget());
+        Assertions.assertEquals("enemy2", move.getMoveTarget());
     }
 }
