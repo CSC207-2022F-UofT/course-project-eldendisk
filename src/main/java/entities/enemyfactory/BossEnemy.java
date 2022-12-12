@@ -1,40 +1,27 @@
-package entities.enemyFactory;
-
+package entities.enemyfactory;
 import entities.combat.Move;
-import entities.player.Character;
 import entities.player.Player;
+import entities.player.Character;
 
 import java.util.ArrayList;
 
-public class NormalEnemy extends Enemy {
+public abstract class BossEnemy extends Enemy {
 
     private String enemyName;
-    private int enemyHP;
-    private int enemyStats;
-    private int enemyAttackDmg;
+    private int HP;
+
     private String enemyType;
 
-    public NormalEnemy(Player player) { // String player -> Player player;
-        super(player, "Normal");
-        setName();
-
-
-    }
-    @Override
-    void setName() {
-        this.enemyName = "mini monster";
-    }
-    @Override
-    public String getName() {
-        return this.enemyName;
-    }
-    //setter methods
-    @Override
-    public int setInitialEnemyHP() {
-        return 20;
+    public boolean enemy_alive = true;
+    public BossEnemy(Player player) {
+        super(player, "Boss");
     }
 
-    ;
+
+    public void setName(String name) {this.enemyName = name;}
+
+
+    abstract int setInitialEnemyHP();
 
     @Override
     public int setAttackDmg() {
@@ -62,7 +49,6 @@ public class NormalEnemy extends Enemy {
         return moves;
     }
 
-
     @Override
     public boolean attack(String move, Character characterBeingAttacked) {
 
@@ -81,31 +67,20 @@ public class NormalEnemy extends Enemy {
         }
     }
 
-    private boolean roar(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
-        return true;
-    }
-
-    private boolean kick(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(3);
-        return true;
-    }
-
-    private boolean punch(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(5);
-        return true;
-    }
-
-    private boolean charge(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(5);
-        return true;
-    }
-
-
     @Override
-    public void setHP(int enemyHP) {
-        this.enemyHP = enemyHP;
+    public void setHP(int HP) {
+        this.setHP(HP);
     }
 
+    // enemy moves
 
+    protected abstract boolean roar(Character characterBeingAttacked);
+
+    protected abstract boolean kick(Character characterBeingAttacked);
+
+
+    protected abstract boolean punch(Character characterBeingAttacked);
+
+
+    protected abstract boolean charge(Character characterBeingAttacked);
 }

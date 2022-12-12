@@ -1,4 +1,4 @@
-package entities.enemyFactory;
+package entities.enemyfactory;
 import entities.player.Player;
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package useCases;
+package usecases;
 
 import entities.player.Gunslinger;
 import entities.player.Mage;

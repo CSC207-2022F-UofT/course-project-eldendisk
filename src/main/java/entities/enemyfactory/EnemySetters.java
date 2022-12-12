@@ -1,4 +1,4 @@
-package entities.enemyFactory;
+package entities.enemyfactory;
 
 public class EnemySetters {
     String enemyName;

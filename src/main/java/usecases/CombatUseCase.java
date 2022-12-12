@@ -1,9 +1,9 @@
-package useCases;
+package usecases;
 
 import java.util.Random;
 
 import entities.combat.Combat;
-import entities.enemyFactory.BossEnemy;
+import entities.enemyfactory.BossEnemy;
 import presenters.CombatPresenter;
 
 public class CombatUseCase implements CombatInterface {

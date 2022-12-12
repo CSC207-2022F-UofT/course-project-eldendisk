@@ -1,7 +1,7 @@
 package entities.combat;
 
-import entities.enemyFactory.Enemy;
-import entities.enemyFactory.EnemyFactory;
+import entities.enemyfactory.Enemy;
+import entities.enemyfactory.EnemyFactory;
 import entities.player.Player;
 
 
