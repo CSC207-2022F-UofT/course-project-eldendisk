@@ -11,19 +11,8 @@ import org.junit.jupiter.api.Test;
 
 public class CombatPresenterTest {
     /*
-    Test cases for some CombatPresenter methods. Tested a few methods for inputs and outputs.
+    Test cases for some CombatPresenter methods. Tested a few methods for correct console outputs.
      */
-    @Test
-    public void TestGetInput() {
-        String input = "input";
-        InputStream in = new ByteArrayInputStream(input.getBytes());
-        System.setIn(in);
-
-        CombatPresenter p = new CombatPresenter();
-
-        Assertions.assertEquals("input", p.getInput());
-    }
-
     @Test
     public void TestDisplayVS() {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -45,5 +34,14 @@ public class CombatPresenterTest {
 
         Assertions.assertTrue(outContent.toString().contains("a has died! You won!\n"));
     }
+    @Test
+    public void TestDisplayLevelUp() {
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
 
+        CombatPresenter p = new CombatPresenter();
+        p.displayLevelUp(5);
+
+        Assertions.assertTrue(outContent.toString().contains("Congratulation! You have leveled up! You are now level 5!\n"));
+    }
 }
