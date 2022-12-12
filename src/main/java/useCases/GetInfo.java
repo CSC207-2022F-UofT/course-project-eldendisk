@@ -1,10 +1,9 @@
 package useCases;
 
-import entities.Gunslinger;
-import entities.Mage;
-import entities.Player;
+import entities.player.Gunslinger;
+import entities.player.Mage;
+import entities.player.Player;
 import entities.TempEldenDisk;
-import org.hamcrest.core.IsInstanceOf;
 
 public class GetInfo {
     public static String getInfo(TempEldenDisk game) {

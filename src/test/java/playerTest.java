@@ -1,6 +1,6 @@
-import entities.Player;
-import entities.Gunslinger;
-import entities.Mage;
+import entities.player.Player;
+import entities.player.Gunslinger;
+import entities.player.Mage;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

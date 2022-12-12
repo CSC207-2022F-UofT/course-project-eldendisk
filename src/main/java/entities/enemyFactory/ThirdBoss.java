@@ -1,7 +1,7 @@
 package entities.enemyFactory;
 
-import entities.Character;
-import entities.Player;
+import entities.player.Character;
+import entities.player.Player;
 
 public class ThirdBoss extends BossEnemy{
     String enemyName;

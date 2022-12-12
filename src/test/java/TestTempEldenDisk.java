@@ -1,5 +1,5 @@
-import entities.Player;
-import entities.Mage;
+import entities.player.Player;
+import entities.player.Mage;
 import entities.TempEldenDisk;
 
 import java.io.IOException;

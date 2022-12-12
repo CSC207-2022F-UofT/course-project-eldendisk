@@ -1,26 +1,28 @@
-package entities;
+package entities.player;
 import entities.combat.Move;
 
 import java.util.ArrayList;
 
+public class Gunslinger extends Player {
 
-public class Samurai extends Player{
-    /* This class creates the Samurai class. The values of the class will be changed depending on the
+    /* This class creates the Gunslinger class. The values of the class will be changed depending on the
      * enemy the player encounters*/
+    //TODO implement combat methods
 
-    public Samurai(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
+    public Gunslinger(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
         super(name);
     }
 
-    public Samurai(String name) {
+    public Gunslinger(String name) {
         super(name);
     }
+
     @Override
     public ArrayList<Move> setMoves() {
-        Move first = new Move("Seppuku", 1, 1, "Opponent");
-        Move second = new Move("Storm Blade", 1, 1, "Opponent");
-        Move third = new Move("Bloody Slash", 1, 1, "Opponent");
+        Move first = new Move("Go Go Glock", 1, 1, "Opponent");
+        Move second = new Move("gun-fu", 1, 1, "Opponent");
+        Move third = new Move("360 NoScope", 1, 1, "Opponent");
         Move fourth = new Move("Execution", 1, 1, "Opponent");
 
         ArrayList<Move> moves = new ArrayList<Move>();
@@ -31,17 +33,16 @@ public class Samurai extends Player{
 
         return moves;
     }
-
     @Override
     public boolean attack(String move, Character characterBeingAttacked) {
 
         switch (move) {
-            case "Seppuku":
-                return seppuku(characterBeingAttacked);
-            case "Storm Blade":
-                return stormBlade(characterBeingAttacked);
-            case "Bloody Slash":
-                return bloodyStash(characterBeingAttacked);
+            case "Go Go Glock":
+                return gogoGlock(characterBeingAttacked);
+            case "gun-fu":
+                return gunfu(characterBeingAttacked);
+            case "360 NoScope":
+                return noScope(characterBeingAttacked);
             case "Execution":
                 return execution(characterBeingAttacked);
             default:
@@ -50,20 +51,18 @@ public class Samurai extends Player{
         }
     }
 
-    private boolean seppuku(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(3);
-        return true;
-    }
-
-    private boolean stormBlade(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
-        characterBeingAttacked.receiveDamage(1);
+    private boolean gogoGlock(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(1);
         return true;
     }
 
-    private boolean bloodyStash(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+    private boolean gunfu(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(1);
+        return true;
+    }
+
+    private boolean noScope(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(1);
         return true;
     }
 

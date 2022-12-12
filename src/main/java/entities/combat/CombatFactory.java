@@ -1,6 +1,6 @@
 package entities.combat;
 
-import entities.Player;
+import entities.player.Player;
 //import Player_Types.Player;
 
 import java.util.Objects;

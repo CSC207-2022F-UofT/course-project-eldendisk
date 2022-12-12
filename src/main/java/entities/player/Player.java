@@ -1,8 +1,9 @@
-package entities;
+package entities.player;
 import entities.combat.Move;
 
 import entities.item.Equip;
 import entities.item.Item;
+import entities.player.Character;
 
 import java.util.ArrayList;
 
@@ -85,14 +86,11 @@ public abstract class Player implements Character, Equip{
     @Override
     public ArrayList<Move> getMoves() {return this.moves;}
 
-
     public void printMoves()  {
         for (int i = 0 ; i < 4 ; i++) {
             System.out.println((i+1) + " : " + getMoves().get(i).toString());
         }
     }
-
-
 
     @Override
 
