@@ -1,9 +1,9 @@
 package ui;
 
-import entities.Gunslinger;
-import entities.Mage;
-import entities.Samurai;
-import entities.Character;
+import entities.player.Gunslinger;
+import entities.player.Mage;
+import entities.player.Samurai;
+import entities.player.Character;
 
 import java.util.Scanner;
 
@@ -26,13 +26,14 @@ public class PlayerCreation {
                 classChoice = kbd.nextLine();
                 if (classChoice.equals("1") || classChoice.equals("2") || classChoice.equals("3")) {
                     validInput = true;
+                    break;
                 }
-            } catch (Exception e) { //if invalid input repeat the above template
+                System.out.println("Please enter 1, 2 or 3");
+            } catch (Exception e) { //Any special cases?
             }
         }
 
         switch (classChoice) {
-
             case "1":
                 return CreateSamurai();
             case "2":
@@ -40,7 +41,7 @@ public class PlayerCreation {
             case "3" :
                 return CreateGunslinger();
         }
-        //In case the user doesn't choose a valid option it creates a Samurai character.
+        //In case an error occurs, default creation of Samurai class.
         return CreateSamurai();
     }
 

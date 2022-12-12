@@ -2,9 +2,8 @@ package useCases;
 
 import java.util.Random;
 
-import Combat.Combat;
+import entities.combat.Combat;
 import presenters.CombatPresenter;
-import entities.Character;
 
 public class CombatUseCase implements CombatInterface {
     /*
@@ -12,92 +11,77 @@ public class CombatUseCase implements CombatInterface {
      */
     private Combat combat;
     private CombatPresenter presenter;
-    private Character player;
-    private Character enemy;
     static int selection;
-    static Random random;
 
     public CombatUseCase(Combat combat, CombatPresenter presenter) {
         this.combat = combat;
         this.presenter = presenter;
     }
 
-    public Character getPlayer() {
-        return player;
-    }
-
-    public Character getEnemy() {
-        return enemy;
-    }
     public void startCombat() {
-        presenter.displayMessage(combat.getPlayer().getName() +" VS "
-                + combat.getEnemy().getName());
-        presenter.displayMessage("-------------------------------------------------------");
+        presenter.displayDelay();
+        presenter.displayEnemyEncounter();
+        presenter.displayDelay();
+        presenter.displayVS(combat.getPlayer().getName(), combat.getEnemy().getName(), combat.getPlayer().getHP(), combat.getEnemy().getHP());
+        presenter.displayDelay();
 
-        while (!combat.getEnemy().isDead() && !combat.getPlayer().isDead() ) {
+        while (!combat.getEnemy().isDead() && !combat.getPlayer().isDead()) {
             //Ask first player what he wants to do;
-            presenter.displayMessage(combat.getPlayer().getName() + ", it is your turn.");
-            presenter.displayMessage("-------------------------------------------------------");
+            presenter.displayPlayerTurn(combat.getPlayer().getName(), combat.getPlayer().getHP());
+            combat.getPlayer().printMoves();
             //input
-            if (presenter.hasInput()) {
-                combat.getPlayer().printMoves();
-                String playerMove = presenter.getInput();
+            String playerMove = presenter.getInput();
 
+            if (playerMove.equals("quit")) {
+                presenter.displayQuit();
+                break;
 
-                if (playerMove.equals("quit")) {
-                    presenter.displayMessage("You quit!");
-                    break;
-                } else if (playerMove.equals("1") || playerMove.equals("2") || playerMove.equals("3")||playerMove.equals("4"))
-                    // (combat.getPlayer().checkMove(goodMove) after adding implementation of move in players
-                    combat.getPlayer().attack(combat.getPlayer().pickMove(playerMove), combat.getEnemy());
+            } else if (playerMove.equals("1") || playerMove.equals("2") || playerMove.equals("3") || playerMove.equals("4")) {
+                combat.getPlayer().attack(combat.getPlayer().pickMove(playerMove), combat.getEnemy());
+                presenter.displayAttack(combat.getPlayer().pickMove(playerMove));
             } else {
-                presenter.displayMessage("Not a valid input, you skip your turn");
+                presenter.displayMissed();
             }
+            presenter.displayDelay();
 
             if (combat.getEnemy().isDead()) {
                 break;
             }
 
-            presenter.displayMessage("Now " + combat.getEnemy().getName() + " moves..." );
-            presenter.displayMessage("-------------------------------------------------------");
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            presenter.displayEnemyTurn(combat.getEnemy().getName(), combat.getEnemy().getHP());
+            presenter.displayDelay();
             selection = new Random().nextInt(4) + 1; // bound by number of moves in Moves
 
-            // remove switch, implement pick corresponding move method and enemy use attack method to attack.
-            switch (selection) { // this is about the attack moves (implement moves and attack first then come back to this)
-                case 1:
-                    presenter.displayMessage("Enemy's move1");
-                    combat.getEnemy().attack(combat.getEnemy().pickMove(Integer.toString(selection)), combat.getPlayer());
-                    break;
-                case 2:
-                    presenter.displayMessage("Enemy's move2");
-                    combat.getEnemy().attack(combat.getEnemy().pickMove(Integer.toString(selection)), combat.getPlayer());
-                    break;
-                case 3:
-                    presenter.displayMessage("Enemy's move3");
-                    combat.getEnemy().attack(combat.getEnemy().pickMove(Integer.toString(selection)), combat.getPlayer());
-                    break;
-                case 4:
-                    presenter.displayMessage("Enemy's move4");
-                    combat.getEnemy().attack(combat.getEnemy().pickMove(Integer.toString(selection)), combat.getPlayer());
-            }
+            String selectedMove = combat.getEnemy().pickMove(Integer.toString(selection));
+            presenter.displayEnemyMove(selectedMove);
+            presenter.displayDelay();
+            combat.getEnemy().attack(selectedMove, combat.getPlayer());
+
             if (combat.getPlayer().isDead()) {
                 break;
             }
-
         }
 
+        // result
+
         if (combat.getEnemy().isDead()) {
-            presenter.displayMessage(combat.getEnemy().getName() + " has died! You won!");
+            presenter.displayCombatWin(combat.getEnemy().getName());
+            combat.getPlayer().add_XP(10);
+            while (combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()) {
+                combat.getPlayer().level_up();
+                presenter.displayLevelUp(combat.getPlayer().getPlayer_level());
+            }
         }
 
         if (combat.getPlayer().isDead()) {
-            presenter.displayMessage(combat.getPlayer().getName() + " have died!");
+            presenter.displayCombatLose(combat.getPlayer().getName());
         }
+
+        presenter.displayDelay();
+        presenter.displayCombatOver();
+        presenter.displayDelay();
+        presenter.displayPrepare();
+        presenter.displayDelay();
     }
 
 }
