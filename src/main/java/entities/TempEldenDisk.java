@@ -1,10 +1,9 @@
 package entities;
 
+import entities.player.Player;
 import ui.PlayerCreation;
 
 import java.io.IOException;
-
-import static entities.GameStorage.GetLastId;
 
 public class TempEldenDisk {
     /**

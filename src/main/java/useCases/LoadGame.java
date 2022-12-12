@@ -1,6 +1,10 @@
 package useCases;
 
 import entities.*;
+import entities.player.Gunslinger;
+import entities.player.Mage;
+import entities.player.Player;
+import entities.player.Samurai;
 
 
 import java.io.*;

@@ -1,10 +1,12 @@
-package entities;
+package entities.player;
 import entities.combat.Move;
+import entities.player.Character;
+import entities.player.Player;
 
 import java.util.ArrayList;
 
 
-public class Samurai extends Player{
+public class Samurai extends Player {
     /* This class creates the Samurai class. The values of the class will be changed depending on the
      * enemy the player encounters*/
 

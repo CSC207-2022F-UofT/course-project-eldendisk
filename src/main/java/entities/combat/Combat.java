@@ -1,8 +1,8 @@
 package entities.combat;
 
 import entities.enemyFactory.EnemyFactory;
-import entities.Player;
-import entities.Character;
+import entities.player.Player;
+import entities.player.Character;
 
 public class Combat {
     // This class is a super class of BossCombat and NormalCombat.
