@@ -31,7 +31,7 @@ public class NormalEnemy extends Enemy {
     //setter methods
     @Override
     public int setInitialEnemyHP() {
-        return 15;
+        return 20;
     }
 
     ;

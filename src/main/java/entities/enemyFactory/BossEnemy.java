@@ -8,9 +8,7 @@ import java.util.ArrayList;
 public abstract class BossEnemy extends Enemy {
 
     private String enemyName;
-    private int enemyHP;
-    private int enemyStats;
-    private int enemyAttackDmg;
+    private int HP;
 
     private String enemyType;
 
@@ -22,10 +20,8 @@ public abstract class BossEnemy extends Enemy {
 
     public void setName(String name) {this.enemyName = name;}
 
-    @Override
-    public int setInitialEnemyHP() {
-        return 20;
-    }
+
+    abstract int setInitialEnemyHP();
 
     @Override
     public int setAttackDmg() {

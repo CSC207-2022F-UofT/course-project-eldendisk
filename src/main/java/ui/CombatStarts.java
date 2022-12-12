@@ -123,7 +123,7 @@ public class CombatStarts {
             System.out.println(combat.getEnemy().getName() + " has died! You won!");
             System.out.println("");
             combat.getPlayer().add_XP(10);
-            while (combat.getPlayer().get_XP() >= combat.getPlayer().getMax_XP()){
+            while (combat.getPlayer().getXP() >= combat.getPlayer().getMaxXP()){
                 combat.getPlayer().level_up();
                 System.out.println("Congratulation! You have leveled up! You are now level " + combat.getPlayer().getPlayer_level() +"!");
                 System.out.println("");

@@ -72,7 +72,7 @@ public class Main {
                     e.printStackTrace();
                 }
 
-                game.getPlayer().setCharacterHP(game.getPlayer().getCharacterMaxHP());
+                game.getPlayer().setHP(game.getPlayer().getMaxHP());
                 System.out.println("You are recovered.");
                 System.out.println("");
             }

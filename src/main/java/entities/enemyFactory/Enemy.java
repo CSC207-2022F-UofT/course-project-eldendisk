@@ -7,6 +7,7 @@ import entities.Player;
 import java.util.ArrayList;
 
 public abstract class Enemy implements Character {
+    // Enemy class implements Character interface in which contains methods need for Combat.
     private String enemyName;
     private String className; // either Boss or Normal
     private Player player;
@@ -53,7 +54,7 @@ public abstract class Enemy implements Character {
 
     @Override
     public int getHP() {
-        return HP;
+        return this.HP;
     }
 
     @Override
@@ -62,18 +63,16 @@ public abstract class Enemy implements Character {
     }
 
     @Override
-    public void receiveDamage(int damage) {
-        changeHP(damage); //value should be damage of attack * dmg mult
-    }
+    public void receiveDamage(int damage) {changeHP(damage); }
 
     @Override
-    public void setCharacterHP(int HP) {
+    public void setHP(int HP) {
         this.HP = HP;
     }
 
     @Override
     public boolean isDead() {
-        // enemy dead when enemy's healthPoint less than or equal to 0.
+        // enemy is dead when enemy's healthPoint less than or equal to 0.
         return this.HP <= 0;
     }
 
@@ -91,10 +90,6 @@ public abstract class Enemy implements Character {
     @Override
     public abstract ArrayList<Move> setMoves();
 
-    @Override
-    public void printMoves() {
-        ;
-    }
 
     @Override
     public abstract boolean attack(String move, Character characterBeingAttacked);

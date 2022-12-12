@@ -7,11 +7,17 @@ public class Gunslinger extends Player {
 
     /* This class creates the Gunslinger class. The values of the class will be changed depending on the
      * enemy the player encounters*/
-    //TODO implement combat methods
 
     public Gunslinger(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
         super(name);
+        setHP(HP);
+        setAttackDamage(attackDamage);
+        setDamageMultiplier(damageMultiplier);
+        setXP(XP);
+        setMaxXP(max_XP);
+        setMaxHP(player_level * 2 + 7);
+        // money attribute is not in use due to the shop feature drop out.
     }
 
     public Gunslinger(String name) {
@@ -20,12 +26,12 @@ public class Gunslinger extends Player {
 
     @Override
     public ArrayList<Move> setMoves() {
-        Move first = new Move("Go Go Glock", 1, 1, "Opponent");
-        Move second = new Move("gun-fu", 1, 1, "Opponent");
-        Move third = new Move("360 NoScope", 1, 1, "Opponent");
-        Move fourth = new Move("Execution", 1, 1, "Opponent");
+        Move first = new Move("Go Go Glock", 6, 1, "Opponent");
+        Move second = new Move("gun-fu", 0, 3, "Opponent");
+        Move third = new Move("360 NoScope", 3, 2, "Opponent");
+        Move fourth = new Move("Execution", 100, 2, "Opponent");
 
-        ArrayList<Move> moves = new ArrayList<Move>();
+        ArrayList<Move> moves = new ArrayList<>();
         moves.add(first);
         moves.add(second);
         moves.add(third);
@@ -52,17 +58,17 @@ public class Gunslinger extends Player {
     }
 
     private boolean gogoGlock(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage((6 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 
     private boolean gunfu(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(3 * getAttackDamage() * getDamageMultiplier());
         return true;
     }
 
     private boolean noScope(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(2 * (getAttackDamage() + 3) * getDamageMultiplier());
         return true;
     }
 

@@ -10,7 +10,15 @@ public class Samurai extends Player{
 
     public Samurai(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
+        // This constructor is used in case of loading game.
+        // money attribute is not in use due to the Shop feature drop.
         super(name);
+        setHP(HP);
+        setAttackDamage(attackDamage);
+        setDamageMultiplier(damageMultiplier);
+        setXP(XP);
+        setMaxXP(max_XP);
+        setMaxHP(player_level * 2 + 7);
     }
 
     public Samurai(String name) {
@@ -18,12 +26,12 @@ public class Samurai extends Player{
     }
     @Override
     public ArrayList<Move> setMoves() {
-        Move first = new Move("Seppuku", 1, 1, "Opponent");
-        Move second = new Move("Storm Blade", 1, 1, "Opponent");
-        Move third = new Move("Bloody Slash", 1, 1, "Opponent");
-        Move fourth = new Move("Execution", 1, 1, "Opponent");
+        Move first = new Move("Seppuku", 3, 2, "Opponent");
+        Move second = new Move("Storm Blade", 1, 3, "Opponent");
+        Move third = new Move("Bloody Slash", 5, 1, "Opponent");
+        Move fourth = new Move("Execution", 100, 3, "Opponent");
 
-        ArrayList<Move> moves = new ArrayList<Move>();
+        ArrayList<Move> moves = new ArrayList<>();
         moves.add(first);
         moves.add(second);
         moves.add(third);
@@ -51,19 +59,17 @@ public class Samurai extends Player{
     }
 
     private boolean seppuku(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(3);
+        characterBeingAttacked.receiveDamage(2 * (3 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 
     private boolean stormBlade(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
-        characterBeingAttacked.receiveDamage(1);
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(3 * (1 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 
     private boolean bloodyStash(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(2);
+        characterBeingAttacked.receiveDamage((5 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 

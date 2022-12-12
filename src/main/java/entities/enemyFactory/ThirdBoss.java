@@ -19,6 +19,11 @@ public class ThirdBoss extends BossEnemy{
     }
 
     @Override
+    int setInitialEnemyHP() {
+        return 80;
+    }
+
+    @Override
     protected boolean roar(Character characterBeingAttacked) {
         characterBeingAttacked.receiveDamage(13);
         return true;

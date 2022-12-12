@@ -15,6 +15,12 @@ public class SecondBoss extends BossEnemy {
     void setName() {
         this.enemyName = "Second Boss";
     }
+
+    @Override
+    int setInitialEnemyHP() {
+        return 60;
+    }
+
     @Override
     public String getName() {
         return this.enemyName;

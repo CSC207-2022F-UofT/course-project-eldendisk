@@ -7,11 +7,18 @@ import java.util.ArrayList;
 public class Mage extends Player{
     /* This class creates the mage class. The values of the class will be changed depending on the
     * enemy the player encounters*/
-    //TODO implement combat methods
 
     public Mage(String name, int HP, int attackDamage, int damageMultiplier, int money, int XP
             , int max_XP, int player_level) {
+        // manual setting. Used for Loading game.
+        // Note that money attribute is not in use due to the Shop feature drop out.
         super(name);
+        setHP(HP);
+        setAttackDamage(attackDamage);
+        setDamageMultiplier(damageMultiplier);
+        setXP(XP);
+        setMaxXP(max_XP);
+        setMaxHP(player_level * 2 + 7);
     }
 
     public Mage(String name) {
@@ -20,12 +27,13 @@ public class Mage extends Player{
 
     @Override
     public ArrayList<Move> setMoves() {
-        Move first = new Move("Flame of the Fell God", 1, 1, "Opponent");
-        Move second = new Move("Comet Azur", 1, 1, "Opponent");
-        Move third = new Move("Stars of Ruin", 1, 1, "Opponent");
-        Move fourth = new Move("Execution", 1, 1, "Opponent");
+        // Mage has 4 Moves.
+        Move first = new Move("Flame of the Fell God", 2, 3, "Opponent");
+        Move second = new Move("Comet Azur", 1, 4, "Opponent");
+        Move third = new Move("Stars of Ruin", 0, 5, "Opponent");
+        Move fourth = new Move("Execution", 100, 1, "Opponent");
 
-        ArrayList<Move> moves = new ArrayList<Move>();
+        ArrayList<Move> moves = new ArrayList();
         moves.add(first);
         moves.add(second);
         moves.add(third);
@@ -53,17 +61,17 @@ public class Mage extends Player{
     }
 
     private boolean flameOfTheFellGod(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(1);
+        characterBeingAttacked.receiveDamage(3 * (2 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 
     private boolean cometAzur(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(5);
+        characterBeingAttacked.receiveDamage(4 * (1 + getAttackDamage()) * getDamageMultiplier());
         return true;
     }
 
     private boolean startsOfRuins(Character characterBeingAttacked) {
-        characterBeingAttacked.receiveDamage(8);
+        characterBeingAttacked.receiveDamage(5 * getAttackDamage() * getDamageMultiplier());
         return true;
     }
 

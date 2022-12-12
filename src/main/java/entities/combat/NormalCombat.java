@@ -7,10 +7,10 @@ import entities.Player;
 
 
 public class NormalCombat extends Combat {
-    /// kept this class in case we implement normal combats
+    // this class represents a Normal, subclass of Combat.
+    // Instance of this class will be created via CombatFactory.
     Enemy combatEnemy;
-    String player;
-    int gameLevel;
+
 
     public NormalCombat(Player player, int gameLevel) {
         super(player, "Normal", gameLevel);

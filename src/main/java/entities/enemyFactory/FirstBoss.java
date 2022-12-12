@@ -17,6 +17,9 @@ public class FirstBoss extends BossEnemy{
     }
 
     @Override
+    int setInitialEnemyHP() {return 40;}
+
+    @Override
     public String getName() {
         return this.enemyName;
     }

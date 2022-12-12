@@ -6,9 +6,10 @@ import entities.Player;
 
 
 public class BossCombat extends Combat{
+    // this class represents a BossCombat, subclass of Combat.
+    // Instance of this class will be created via CombatFactory.
     Enemy combatEnemy;
-    Player player;
-    int gameLevel;
+
 
     public BossCombat(Player player, int gameLevel) {
         super(player, "Boss", gameLevel);
