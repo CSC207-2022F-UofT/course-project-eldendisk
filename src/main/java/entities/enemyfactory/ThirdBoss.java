@@ -1,4 +1,4 @@
-package entities.enemyFactory;
+package entities.enemyfactory;
 
 import entities.player.Character;
 import entities.player.Player;

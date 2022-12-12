@@ -1,6 +1,6 @@
 package entities;
 
-import useCases.writingCSV.EditCSV;
+import usecases.writingcsv.EditCSV;
 
 import javax.swing.*;
 import java.io.BufferedReader;

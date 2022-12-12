@@ -1,27 +1,40 @@
-package entities.enemyFactory;
+package entities.enemyfactory;
+
 import entities.combat.Move;
-import entities.player.Player;
 import entities.player.Character;
+import entities.player.Player;
 
 import java.util.ArrayList;
 
-public abstract class BossEnemy extends Enemy {
+public class NormalEnemy extends Enemy {
 
     private String enemyName;
-    private int HP;
-
+    private int enemyHP;
+    private int enemyStats;
+    private int enemyAttackDmg;
     private String enemyType;
 
-    public boolean enemy_alive = true;
-    public BossEnemy(Player player) {
-        super(player, "Boss");
+    public NormalEnemy(Player player) { // String player -> Player player;
+        super(player, "Normal");
+        setName();
+
+
+    }
+    @Override
+    void setName() {
+        this.enemyName = "mini monster";
+    }
+    @Override
+    public String getName() {
+        return this.enemyName;
+    }
+    //setter methods
+    @Override
+    public int setInitialEnemyHP() {
+        return 20;
     }
 
-
-    public void setName(String name) {this.enemyName = name;}
-
-
-    abstract int setInitialEnemyHP();
+    ;
 
     @Override
     public int setAttackDmg() {
@@ -49,6 +62,7 @@ public abstract class BossEnemy extends Enemy {
         return moves;
     }
 
+
     @Override
     public boolean attack(String move, Character characterBeingAttacked) {
 
@@ -67,20 +81,31 @@ public abstract class BossEnemy extends Enemy {
         }
     }
 
-    @Override
-    public void setHP(int HP) {
-        this.setHP(HP);
+    private boolean roar(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(1);
+        return true;
     }
 
-    // enemy moves
+    private boolean kick(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(3);
+        return true;
+    }
 
-    protected abstract boolean roar(Character characterBeingAttacked);
+    private boolean punch(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(5);
+        return true;
+    }
 
-    protected abstract boolean kick(Character characterBeingAttacked);
+    private boolean charge(Character characterBeingAttacked) {
+        characterBeingAttacked.receiveDamage(5);
+        return true;
+    }
 
 
-    protected abstract boolean punch(Character characterBeingAttacked);
+    @Override
+    public void setHP(int enemyHP) {
+        this.enemyHP = enemyHP;
+    }
 
 
-    protected abstract boolean charge(Character characterBeingAttacked);
 }

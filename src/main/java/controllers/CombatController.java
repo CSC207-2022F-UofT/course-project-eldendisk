@@ -1,6 +1,6 @@
 package controllers;
 
-import useCases.CombatInterface;
+import usecases.CombatInterface;
 
 public class CombatController {
     /*

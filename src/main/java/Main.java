@@ -1,14 +1,14 @@
 /* This is our main class where the game is set up and run. */
 import entities.combat.Combat;
-import entities.enemyFactory.BossEnemy;
+import entities.enemyfactory.BossEnemy;
 import ui.CombatStarts;
 import ui.EldenDisk;
 import entities.combat.CombatFactory;
 import entities.TempEldenDisk;
 import controllers.CombatController;
 import presenters.CombatPresenter;
-import useCases.CombatUseCase;
-import useCases.CombatInterface;
+import usecases.CombatUseCase;
+import usecases.CombatInterface;
 
 import java.io.IOException;
 

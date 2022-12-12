@@ -1,6 +1,6 @@
 package enemyTest;
 
-import entities.enemyFactory.EnemySetters;
+import entities.enemyfactory.EnemySetters;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
