@@ -39,7 +39,7 @@ public class EnemyTest {
         int AttackDmg = 15;
         e4.setEnemyAttackDmg(AttackDmg);
 
-        Assertions.assertEquals(AttackDmg, e4.setEnemyHP(AttackDmg));
+        Assertions.assertEquals(AttackDmg, e4.getEnemyHP());
     }
 
     @Test
